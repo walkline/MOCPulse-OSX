@@ -1,0 +1,415 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		84B2E55F1B58FF590071F919 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B2E55E1B58FF590071F919 /* AppDelegate.swift */; };
+		84B2E5611B58FF590071F919 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B2E5601B58FF590071F919 /* ViewController.swift */; };
+		84B2E5631B58FF590071F919 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84B2E5621B58FF590071F919 /* Images.xcassets */; };
+		84B2E5661B58FF590071F919 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B2E5641B58FF590071F919 /* Main.storyboard */; };
+		84B2E5721B58FF590071F919 /* MOCPulse_OSXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B2E5711B58FF590071F919 /* MOCPulse_OSXTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		84B2E56C1B58FF590071F919 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84B2E5511B58FF590071F919 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84B2E5581B58FF590071F919;
+			remoteInfo = "MOCPulse OSX";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		84B2E5591B58FF590071F919 /* MOCPulse OSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MOCPulse OSX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84B2E55D1B58FF590071F919 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84B2E55E1B58FF590071F919 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		84B2E5601B58FF590071F919 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		84B2E5621B58FF590071F919 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		84B2E5651B58FF590071F919 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		84B2E56B1B58FF590071F919 /* MOCPulse OSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MOCPulse OSXTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84B2E5701B58FF590071F919 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84B2E5711B58FF590071F919 /* MOCPulse_OSXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOCPulse_OSXTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84B2E5561B58FF590071F919 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84B2E5681B58FF590071F919 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		84B2E5501B58FF590071F919 = {
+			isa = PBXGroup;
+			children = (
+				84B2E55B1B58FF590071F919 /* MOCPulse OSX */,
+				84B2E56E1B58FF590071F919 /* MOCPulse OSXTests */,
+				84B2E55A1B58FF590071F919 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		84B2E55A1B58FF590071F919 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84B2E5591B58FF590071F919 /* MOCPulse OSX.app */,
+				84B2E56B1B58FF590071F919 /* MOCPulse OSXTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84B2E55B1B58FF590071F919 /* MOCPulse OSX */ = {
+			isa = PBXGroup;
+			children = (
+				84B2E55E1B58FF590071F919 /* AppDelegate.swift */,
+				84B2E5601B58FF590071F919 /* ViewController.swift */,
+				84B2E5621B58FF590071F919 /* Images.xcassets */,
+				84B2E5641B58FF590071F919 /* Main.storyboard */,
+				84B2E55C1B58FF590071F919 /* Supporting Files */,
+			);
+			path = "MOCPulse OSX";
+			sourceTree = "<group>";
+		};
+		84B2E55C1B58FF590071F919 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				84B2E55D1B58FF590071F919 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		84B2E56E1B58FF590071F919 /* MOCPulse OSXTests */ = {
+			isa = PBXGroup;
+			children = (
+				84B2E5711B58FF590071F919 /* MOCPulse_OSXTests.swift */,
+				84B2E56F1B58FF590071F919 /* Supporting Files */,
+			);
+			path = "MOCPulse OSXTests";
+			sourceTree = "<group>";
+		};
+		84B2E56F1B58FF590071F919 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				84B2E5701B58FF590071F919 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84B2E5581B58FF590071F919 /* MOCPulse OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84B2E5751B58FF590071F919 /* Build configuration list for PBXNativeTarget "MOCPulse OSX" */;
+			buildPhases = (
+				84B2E5551B58FF590071F919 /* Sources */,
+				84B2E5561B58FF590071F919 /* Frameworks */,
+				84B2E5571B58FF590071F919 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MOCPulse OSX";
+			productName = "MOCPulse OSX";
+			productReference = 84B2E5591B58FF590071F919 /* MOCPulse OSX.app */;
+			productType = "com.apple.product-type.application";
+		};
+		84B2E56A1B58FF590071F919 /* MOCPulse OSXTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84B2E5781B58FF590071F919 /* Build configuration list for PBXNativeTarget "MOCPulse OSXTests" */;
+			buildPhases = (
+				84B2E5671B58FF590071F919 /* Sources */,
+				84B2E5681B58FF590071F919 /* Frameworks */,
+				84B2E5691B58FF590071F919 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84B2E56D1B58FF590071F919 /* PBXTargetDependency */,
+			);
+			name = "MOCPulse OSXTests";
+			productName = "MOCPulse OSXTests";
+			productReference = 84B2E56B1B58FF590071F919 /* MOCPulse OSXTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84B2E5511B58FF590071F919 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "Master of Code";
+				TargetAttributes = {
+					84B2E5581B58FF590071F919 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					84B2E56A1B58FF590071F919 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 84B2E5581B58FF590071F919;
+					};
+				};
+			};
+			buildConfigurationList = 84B2E5541B58FF590071F919 /* Build configuration list for PBXProject "MOCPulse OSX" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84B2E5501B58FF590071F919;
+			productRefGroup = 84B2E55A1B58FF590071F919 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84B2E5581B58FF590071F919 /* MOCPulse OSX */,
+				84B2E56A1B58FF590071F919 /* MOCPulse OSXTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84B2E5571B58FF590071F919 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84B2E5631B58FF590071F919 /* Images.xcassets in Resources */,
+				84B2E5661B58FF590071F919 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84B2E5691B58FF590071F919 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84B2E5551B58FF590071F919 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84B2E5611B58FF590071F919 /* ViewController.swift in Sources */,
+				84B2E55F1B58FF590071F919 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84B2E5671B58FF590071F919 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84B2E5721B58FF590071F919 /* MOCPulse_OSXTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		84B2E56D1B58FF590071F919 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84B2E5581B58FF590071F919 /* MOCPulse OSX */;
+			targetProxy = 84B2E56C1B58FF590071F919 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		84B2E5641B58FF590071F919 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84B2E5651B58FF590071F919 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		84B2E5731B58FF590071F919 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		84B2E5741B58FF590071F919 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		84B2E5761B58FF590071F919 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "MOCPulse OSX/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		84B2E5771B58FF590071F919 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "MOCPulse OSX/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		84B2E5791B58FF590071F919 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MOCPulse OSXTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MOCPulse OSX.app/Contents/MacOS/MOCPulse OSX";
+			};
+			name = Debug;
+		};
+		84B2E57A1B58FF590071F919 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MOCPulse OSXTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MOCPulse OSX.app/Contents/MacOS/MOCPulse OSX";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84B2E5541B58FF590071F919 /* Build configuration list for PBXProject "MOCPulse OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84B2E5731B58FF590071F919 /* Debug */,
+				84B2E5741B58FF590071F919 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84B2E5751B58FF590071F919 /* Build configuration list for PBXNativeTarget "MOCPulse OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84B2E5761B58FF590071F919 /* Debug */,
+				84B2E5771B58FF590071F919 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		84B2E5781B58FF590071F919 /* Build configuration list for PBXNativeTarget "MOCPulse OSXTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84B2E5791B58FF590071F919 /* Debug */,
+				84B2E57A1B58FF590071F919 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84B2E5511B58FF590071F919 /* Project object */;
+}
