@@ -123,6 +123,13 @@ class TcpSocket: NSObject, NSStreamDelegate {
     private func readContent() -> PulsePacket? {
         let contentSize = Int(packet!.size!)
         
+        if (contentSize == 0) {
+            contentReadIndex = 0
+            contentData = []
+            
+            return packet
+        }
+        
         var bytesLeft = contentSize - contentReadIndex
         
         let buf = NSMutableData(capacity: bytesLeft)
