@@ -7,12 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8431E28B1B5969B8006955DA /* TcpSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8431E28A1B5969B8006955DA /* TcpSocket.swift */; };
+		8431E28D1B596A09006955DA /* PulsePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8431E28C1B596A09006955DA /* PulsePacket.swift */; };
+		8431E28F1B5999E7006955DA /* Opcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8431E28E1B5999E7006955DA /* Opcode.swift */; };
+		8431E2911B59C845006955DA /* OAuthLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8431E2901B59C845006955DA /* OAuthLoader.swift */; };
+		844221F71B5BC224007251F7 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844221F61B5BC224007251F7 /* ChartView.swift */; };
+		849C63FB1B5AE7C100BCEAB1 /* PulseSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C63FA1B5AE7C100BCEAB1 /* PulseSession.swift */; };
+		849C63FE1B5AF01300BCEAB1 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C63FD1B5AF01300BCEAB1 /* UserModel.swift */; };
+		849C64011B5AF09100BCEAB1 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C64001B5AF09100BCEAB1 /* API.swift */; };
+		849C64041B5AF10D00BCEAB1 /* Alamofire-SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C64021B5AF10D00BCEAB1 /* Alamofire-SwiftyJSON.swift */; };
+		849C64051B5AF10D00BCEAB1 /* LocalObjectsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C64031B5AF10D00BCEAB1 /* LocalObjectsManager.swift */; };
+		849C64071B5AF12A00BCEAB1 /* VoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C64061B5AF12A00BCEAB1 /* VoteModel.swift */; };
+		849C640A1B5B04B000BCEAB1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C64091B5B04B000BCEAB1 /* MainViewController.swift */; };
+		849C64151B5B1BAB00BCEAB1 /* VoteCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C64141B5B1BAB00BCEAB1 /* VoteCellView.swift */; };
+		84ABF0CE1B5C091900129B63 /* PulseAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ABF0CD1B5C091900129B63 /* PulseAnimation.swift */; };
 		84B2E55F1B58FF590071F919 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B2E55E1B58FF590071F919 /* AppDelegate.swift */; };
 		84B2E5611B58FF590071F919 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B2E5601B58FF590071F919 /* ViewController.swift */; };
 		84B2E5631B58FF590071F919 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84B2E5621B58FF590071F919 /* Images.xcassets */; };
 		84B2E5661B58FF590071F919 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B2E5641B58FF590071F919 /* Main.storyboard */; };
 		84B2E5721B58FF590071F919 /* MOCPulse_OSXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B2E5711B58FF590071F919 /* MOCPulse_OSXTests.swift */; };
-		84B2E57C1B594F280071F919 /* TcpSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B2E57B1B594F280071F919 /* TcpSocket.swift */; };
 		D9FECEF426917D738F12A65B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AAD4AE1FB41C5118EF2C445 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -29,6 +42,20 @@
 /* Begin PBXFileReference section */
 		09643F4E7B4AE0C53AB3ED0E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		3AAD4AE1FB41C5118EF2C445 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8431E28A1B5969B8006955DA /* TcpSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TcpSocket.swift; path = socket/TcpSocket.swift; sourceTree = "<group>"; };
+		8431E28C1B596A09006955DA /* PulsePacket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PulsePacket.swift; path = socket/PulsePacket.swift; sourceTree = "<group>"; };
+		8431E28E1B5999E7006955DA /* Opcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Opcode.swift; path = socket/Opcode.swift; sourceTree = "<group>"; };
+		8431E2901B59C845006955DA /* OAuthLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthLoader.swift; sourceTree = "<group>"; };
+		844221F61B5BC224007251F7 /* ChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChartView.swift; path = views/ChartView.swift; sourceTree = "<group>"; };
+		849C63FA1B5AE7C100BCEAB1 /* PulseSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PulseSession.swift; path = socket/PulseSession.swift; sourceTree = "<group>"; };
+		849C63FD1B5AF01300BCEAB1 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserModel.swift; path = models/UserModel.swift; sourceTree = "<group>"; };
+		849C64001B5AF09100BCEAB1 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = helpers/API.swift; sourceTree = "<group>"; };
+		849C64021B5AF10D00BCEAB1 /* Alamofire-SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Alamofire-SwiftyJSON.swift"; path = "helpers/Alamofire-SwiftyJSON.swift"; sourceTree = "<group>"; };
+		849C64031B5AF10D00BCEAB1 /* LocalObjectsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocalObjectsManager.swift; path = helpers/LocalObjectsManager.swift; sourceTree = "<group>"; };
+		849C64061B5AF12A00BCEAB1 /* VoteModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VoteModel.swift; path = models/VoteModel.swift; sourceTree = "<group>"; };
+		849C64091B5B04B000BCEAB1 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = viewcontrollers/MainViewController.swift; sourceTree = "<group>"; };
+		849C64141B5B1BAB00BCEAB1 /* VoteCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VoteCellView.swift; path = views/VoteCellView.swift; sourceTree = "<group>"; };
+		84ABF0CD1B5C091900129B63 /* PulseAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PulseAnimation.swift; path = views/PulseAnimation.swift; sourceTree = "<group>"; };
 		84B2E5591B58FF590071F919 /* MOCPulse OSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MOCPulse OSX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B2E55D1B58FF590071F919 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84B2E55E1B58FF590071F919 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,7 +65,6 @@
 		84B2E56B1B58FF590071F919 /* MOCPulse OSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MOCPulse OSXTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B2E5701B58FF590071F919 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84B2E5711B58FF590071F919 /* MOCPulse_OSXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOCPulse_OSXTests.swift; sourceTree = "<group>"; };
-		84B2E57B1B594F280071F919 /* TcpSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TcpSocket.swift; sourceTree = "<group>"; };
 		E39E2B8D87EE79B7EAF5CEC1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,6 +96,54 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		8431E2891B5969A5006955DA /* socket */ = {
+			isa = PBXGroup;
+			children = (
+				8431E28C1B596A09006955DA /* PulsePacket.swift */,
+				8431E28A1B5969B8006955DA /* TcpSocket.swift */,
+				8431E28E1B5999E7006955DA /* Opcode.swift */,
+				849C63FA1B5AE7C100BCEAB1 /* PulseSession.swift */,
+			);
+			name = socket;
+			sourceTree = "<group>";
+		};
+		849C63FC1B5AEFDE00BCEAB1 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				849C64061B5AF12A00BCEAB1 /* VoteModel.swift */,
+				849C63FD1B5AF01300BCEAB1 /* UserModel.swift */,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
+		849C63FF1B5AF06B00BCEAB1 /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				849C64021B5AF10D00BCEAB1 /* Alamofire-SwiftyJSON.swift */,
+				849C64031B5AF10D00BCEAB1 /* LocalObjectsManager.swift */,
+				849C64001B5AF09100BCEAB1 /* API.swift */,
+			);
+			name = helpers;
+			sourceTree = "<group>";
+		};
+		849C64081B5B046D00BCEAB1 /* viewcontrollers */ = {
+			isa = PBXGroup;
+			children = (
+				849C64091B5B04B000BCEAB1 /* MainViewController.swift */,
+			);
+			name = viewcontrollers;
+			sourceTree = "<group>";
+		};
+		849C640D1B5B0B0F00BCEAB1 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				849C64141B5B1BAB00BCEAB1 /* VoteCellView.swift */,
+				844221F61B5BC224007251F7 /* ChartView.swift */,
+				84ABF0CD1B5C091900129B63 /* PulseAnimation.swift */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
 		84B2E5501B58FF590071F919 = {
 			isa = PBXGroup;
 			children = (
@@ -93,12 +167,17 @@
 		84B2E55B1B58FF590071F919 /* MOCPulse OSX */ = {
 			isa = PBXGroup;
 			children = (
+				849C640D1B5B0B0F00BCEAB1 /* views */,
+				849C64081B5B046D00BCEAB1 /* viewcontrollers */,
+				849C63FF1B5AF06B00BCEAB1 /* helpers */,
+				8431E2891B5969A5006955DA /* socket */,
+				849C63FC1B5AEFDE00BCEAB1 /* models */,
 				84B2E55E1B58FF590071F919 /* AppDelegate.swift */,
 				84B2E5601B58FF590071F919 /* ViewController.swift */,
 				84B2E5621B58FF590071F919 /* Images.xcassets */,
 				84B2E5641B58FF590071F919 /* Main.storyboard */,
 				84B2E55C1B58FF590071F919 /* Supporting Files */,
-				84B2E57B1B594F280071F919 /* TcpSocket.swift */,
+				8431E2901B59C845006955DA /* OAuthLoader.swift */,
 			);
 			path = "MOCPulse OSX";
 			sourceTree = "<group>";
@@ -286,9 +365,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8431E28F1B5999E7006955DA /* Opcode.swift in Sources */,
+				849C640A1B5B04B000BCEAB1 /* MainViewController.swift in Sources */,
+				849C64011B5AF09100BCEAB1 /* API.swift in Sources */,
+				849C64051B5AF10D00BCEAB1 /* LocalObjectsManager.swift in Sources */,
 				84B2E5611B58FF590071F919 /* ViewController.swift in Sources */,
-				84B2E57C1B594F280071F919 /* TcpSocket.swift in Sources */,
+				849C64041B5AF10D00BCEAB1 /* Alamofire-SwiftyJSON.swift in Sources */,
+				844221F71B5BC224007251F7 /* ChartView.swift in Sources */,
+				849C64151B5B1BAB00BCEAB1 /* VoteCellView.swift in Sources */,
+				84ABF0CE1B5C091900129B63 /* PulseAnimation.swift in Sources */,
+				849C63FE1B5AF01300BCEAB1 /* UserModel.swift in Sources */,
+				849C64071B5AF12A00BCEAB1 /* VoteModel.swift in Sources */,
+				8431E28D1B596A09006955DA /* PulsePacket.swift in Sources */,
+				8431E28B1B5969B8006955DA /* TcpSocket.swift in Sources */,
+				8431E2911B59C845006955DA /* OAuthLoader.swift in Sources */,
 				84B2E55F1B58FF590071F919 /* AppDelegate.swift in Sources */,
+				849C63FB1B5AE7C100BCEAB1 /* PulseSession.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +502,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "MOCPulse OSX/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -422,7 +515,9 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "MOCPulse OSX/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Ounchecked";
 			};
 			name = Release;
 		};

@@ -8,19 +8,54 @@
 
 import Cocoa
 
+let host = "91.244.58.131"
+let port = 4242
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-    var socket : TcpSocket?
+    //var socket : TcpSocket?
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        self.socket = TcpSocket()
+//        self.socket = TcpSocket()
+//        self.socket?.connect(host, port: port)
         
-        // Insert code here to initialize your application
+        TcpSocket.sharedInstance.connect(host, port: port)
+
+        NSAppleEventManager.sharedAppleEventManager().setEventHandler(
+            self,
+            andSelector: "handleURLEvent:withReply:",
+            forEventClass: AEEventClass(kInternetEventClass),
+            andEventID: AEEventID(kAEGetURL)
+        )
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "notify:", name:"newpacket", object: nil)
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
         // Insert code here to tear down your application
+    }
+    
+    func handleURLEvent(event: NSAppleEventDescriptor, withReply reply: NSAppleEventDescriptor) {
+        println("handleURLEvent")
+        if let urlString = event.paramDescriptorForKeyword(AEKeyword(keyDirectObject))?.stringValue {
+            if let url = NSURL(string: urlString) {
+                println("oooook")
+                println(url)
+                OAuthLoader.sharedInstance.handleRedirectURL(url)
+                //RedditLoader.handleRedirectURL(url)
+            }
+        }
+        else {
+            NSLog("No valid URL to handle")
+        }
+    }
+    
+    func notify(notification: NSNotification){
+        var packet = notification.object as! PulsePacket
+        
+        println(packet)
+        
+        //Take Action on Notification
     }
 }
 

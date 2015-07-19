@@ -5,3 +5,4 @@ use_frameworks!
 pod 'Alamofire', '~> 1.2'
 pod 'SwiftyJSON', '~> 2.2.0'
 pod 'KeychainAccess', '~> 1.2.1'
+pod 'p2.OAuth2', '~> 1.2.7'

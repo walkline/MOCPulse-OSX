@@ -13,6 +13,13 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        /*OAuthLoader.sharedInstance.authorize() { didFail, error in
+            
+            println("did!")
+            println(didFail)
+            println(error)
+            //self.didAuthorize(didFail, error: error)
+        }*/
         // Do any additional setup after loading the view.
     }
 
