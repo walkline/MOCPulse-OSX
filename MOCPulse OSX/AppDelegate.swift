@@ -8,17 +8,14 @@
 
 import Cocoa
 
-let host = "91.244.58.131"
+let host = "192.168.4.56"
 let port = 4242
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-    //var socket : TcpSocket?
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-//        self.socket = TcpSocket()
-//        self.socket?.connect(host, port: port)
-        
+      
         TcpSocket.sharedInstance.connect(host, port: port)
 
         NSAppleEventManager.sharedAppleEventManager().setEventHandler(

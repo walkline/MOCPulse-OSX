@@ -118,6 +118,8 @@ class PulseSession: NSObject {
             LocalObjectsManager.sharedInstance.votes! = [vote]
         }
         
+        NotificationsMgr.sharedInstance.notifyNewVote(vote)
+        
         NSNotificationCenter.defaultCenter().postNotificationName("reloadVotes", object: nil)
     }
     
