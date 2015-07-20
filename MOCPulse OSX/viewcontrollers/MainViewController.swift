@@ -192,4 +192,7 @@ class MainViewController: NSViewController, NSTableViewDataSource, NSTableViewDe
         
         TcpSocket.sharedInstance.session?.voteFor(vote!.id!, colorId: VoteColor.VOTE_COLOR_YELLOW.rawValue)
     }
+    
+    @IBAction func createPressed(sender: AnyObject) {
+    }
 }

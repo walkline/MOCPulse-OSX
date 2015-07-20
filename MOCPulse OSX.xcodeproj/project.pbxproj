@@ -7,12 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6FC5C0D33599EBF36D47F504 /* Pods_MOCPulse_OSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16F6A4724366AF15BFB7E153 /* Pods_MOCPulse_OSX.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		8412CE341B5D2375005EF159 /* VoteCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8412CE331B5D2375005EF159 /* VoteCellView.xib */; };
 		8431E28B1B5969B8006955DA /* TcpSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8431E28A1B5969B8006955DA /* TcpSocket.swift */; };
 		8431E28D1B596A09006955DA /* PulsePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8431E28C1B596A09006955DA /* PulsePacket.swift */; };
 		8431E28F1B5999E7006955DA /* Opcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8431E28E1B5999E7006955DA /* Opcode.swift */; };
 		8431E2911B59C845006955DA /* OAuthLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8431E2901B59C845006955DA /* OAuthLoader.swift */; };
 		844221F71B5BC224007251F7 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844221F61B5BC224007251F7 /* ChartView.swift */; };
 		84451DA01B5CE0C800AED9EC /* NotificationsMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84451D9F1B5CE0C800AED9EC /* NotificationsMgr.swift */; };
+		84451DA21B5CF7FC00AED9EC /* CreateVoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84451DA11B5CF7FC00AED9EC /* CreateVoteViewController.swift */; };
+		84451E2B1B5D090400AED9EC /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84451DA81B5CFD6700AED9EC /* NotificationCenter.framework */; };
+		84451E321B5D090400AED9EC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84451E301B5D090400AED9EC /* InfoPlist.strings */; };
+		84451E341B5D090400AED9EC /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84451E331B5D090400AED9EC /* TodayViewController.swift */; };
+		84451E361B5D090400AED9EC /* TodayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84451E351B5D090400AED9EC /* TodayViewController.xib */; };
+		84451E391B5D090400AED9EC /* MOCPulse Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 84451E2A1B5D090400AED9EC /* MOCPulse Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		84451E3F1B5D095200AED9EC /* VotesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84451E3D1B5D095200AED9EC /* VotesListViewController.swift */; };
+		84451E401B5D095200AED9EC /* VotesListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84451E3E1B5D095200AED9EC /* VotesListViewController.xib */; };
+		84451E421B5D15C700AED9EC /* models in Resources */ = {isa = PBXBuildFile; fileRef = 84451E411B5D15C700AED9EC /* models */; };
+		84451E441B5D15D800AED9EC /* helpers in Resources */ = {isa = PBXBuildFile; fileRef = 84451E431B5D15D800AED9EC /* helpers */; };
+		84451E451B5D160300AED9EC /* LocalObjectsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C64031B5AF10D00BCEAB1 /* LocalObjectsManager.swift */; };
+		84451E461B5D160300AED9EC /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C64001B5AF09100BCEAB1 /* API.swift */; };
+		84451E471B5D160300AED9EC /* VoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C64061B5AF12A00BCEAB1 /* VoteModel.swift */; };
+		84451E481B5D160300AED9EC /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C63FD1B5AF01300BCEAB1 /* UserModel.swift */; };
+		84451E491B5D19BB00AED9EC /* Alamofire-SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C64021B5AF10D00BCEAB1 /* Alamofire-SwiftyJSON.swift */; };
+		84451E4B1B5D1FD600AED9EC /* TodayVoteCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84451E4A1B5D1FD600AED9EC /* TodayVoteCellView.swift */; };
 		849C63FB1B5AE7C100BCEAB1 /* PulseSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C63FA1B5AE7C100BCEAB1 /* PulseSession.swift */; };
 		849C63FE1B5AF01300BCEAB1 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C63FD1B5AF01300BCEAB1 /* UserModel.swift */; };
 		849C64011B5AF09100BCEAB1 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C64001B5AF09100BCEAB1 /* API.swift */; };
@@ -27,10 +45,18 @@
 		84B2E5631B58FF590071F919 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84B2E5621B58FF590071F919 /* Images.xcassets */; };
 		84B2E5661B58FF590071F919 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B2E5641B58FF590071F919 /* Main.storyboard */; };
 		84B2E5721B58FF590071F919 /* MOCPulse_OSXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B2E5711B58FF590071F919 /* MOCPulse_OSXTests.swift */; };
+		97A1B1BDA15FF3B002FB5602 /* Pods_MOCPulse_Today.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2186831B6BE5A907BE8B667 /* Pods_MOCPulse_Today.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		D9FECEF426917D738F12A65B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AAD4AE1FB41C5118EF2C445 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		84451E371B5D090400AED9EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84B2E5511B58FF590071F919 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84451E291B5D090400AED9EC;
+			remoteInfo = "MOCPulse Today";
+		};
 		84B2E56C1B58FF590071F919 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 84B2E5511B58FF590071F919 /* Project object */;
@@ -40,15 +66,48 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		84451DBB1B5CFD6700AED9EC /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				84451E391B5D090400AED9EC /* MOCPulse Today.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		09643F4E7B4AE0C53AB3ED0E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		0F36BECC1B683336DF37F536 /* Pods-MOCPulse Today.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MOCPulse Today.release.xcconfig"; path = "Pods/Target Support Files/Pods-MOCPulse Today/Pods-MOCPulse Today.release.xcconfig"; sourceTree = "<group>"; };
+		16F6A4724366AF15BFB7E153 /* Pods_MOCPulse_OSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MOCPulse_OSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		39EF1136C37FF0638555D1AA /* Pods-MOCPulse OSX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MOCPulse OSX.release.xcconfig"; path = "Pods/Target Support Files/Pods-MOCPulse OSX/Pods-MOCPulse OSX.release.xcconfig"; sourceTree = "<group>"; };
 		3AAD4AE1FB41C5118EF2C445 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C0BD41563626336910FA8DD /* Pods-MOCPulse OSX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MOCPulse OSX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MOCPulse OSX/Pods-MOCPulse OSX.debug.xcconfig"; sourceTree = "<group>"; };
+		8412CE331B5D2375005EF159 /* VoteCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VoteCellView.xib; sourceTree = "<group>"; };
+		8412CE351B5D2F76005EF159 /* MOCPulse OSX.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "MOCPulse OSX.entitlements"; sourceTree = "<group>"; };
 		8431E28A1B5969B8006955DA /* TcpSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TcpSocket.swift; path = socket/TcpSocket.swift; sourceTree = "<group>"; };
 		8431E28C1B596A09006955DA /* PulsePacket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PulsePacket.swift; path = socket/PulsePacket.swift; sourceTree = "<group>"; };
 		8431E28E1B5999E7006955DA /* Opcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Opcode.swift; path = socket/Opcode.swift; sourceTree = "<group>"; };
 		8431E2901B59C845006955DA /* OAuthLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthLoader.swift; sourceTree = "<group>"; };
 		844221F61B5BC224007251F7 /* ChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChartView.swift; path = views/ChartView.swift; sourceTree = "<group>"; };
 		84451D9F1B5CE0C800AED9EC /* NotificationsMgr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationsMgr.swift; path = helpers/NotificationsMgr.swift; sourceTree = "<group>"; };
+		84451DA11B5CF7FC00AED9EC /* CreateVoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateVoteViewController.swift; path = viewcontrollers/CreateVoteViewController.swift; sourceTree = "<group>"; };
+		84451DA81B5CFD6700AED9EC /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		84451E2A1B5D090400AED9EC /* MOCPulse Today.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "MOCPulse Today.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84451E2E1B5D090400AED9EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84451E2F1B5D090400AED9EC /* MOCPulse_Today.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MOCPulse_Today.entitlements; sourceTree = "<group>"; };
+		84451E311B5D090400AED9EC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		84451E331B5D090400AED9EC /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		84451E351B5D090400AED9EC /* TodayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayViewController.xib; sourceTree = "<group>"; };
+		84451E3D1B5D095200AED9EC /* VotesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VotesListViewController.swift; sourceTree = "<group>"; };
+		84451E3E1B5D095200AED9EC /* VotesListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VotesListViewController.xib; sourceTree = "<group>"; };
+		84451E411B5D15C700AED9EC /* models */ = {isa = PBXFileReference; lastKnownFileType = folder; name = models; path = "MOCPulse OSX/models"; sourceTree = SOURCE_ROOT; };
+		84451E431B5D15D800AED9EC /* helpers */ = {isa = PBXFileReference; lastKnownFileType = folder; name = helpers; path = "MOCPulse OSX/helpers"; sourceTree = SOURCE_ROOT; };
+		84451E4A1B5D1FD600AED9EC /* TodayVoteCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayVoteCellView.swift; sourceTree = "<group>"; };
 		849C63FA1B5AE7C100BCEAB1 /* PulseSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PulseSession.swift; path = socket/PulseSession.swift; sourceTree = "<group>"; };
 		849C63FD1B5AF01300BCEAB1 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserModel.swift; path = models/UserModel.swift; sourceTree = "<group>"; };
 		849C64001B5AF09100BCEAB1 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = helpers/API.swift; sourceTree = "<group>"; };
@@ -67,15 +126,27 @@
 		84B2E56B1B58FF590071F919 /* MOCPulse OSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MOCPulse OSXTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B2E5701B58FF590071F919 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84B2E5711B58FF590071F919 /* MOCPulse_OSXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOCPulse_OSXTests.swift; sourceTree = "<group>"; };
+		B2186831B6BE5A907BE8B667 /* Pods_MOCPulse_Today.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MOCPulse_Today.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E39E2B8D87EE79B7EAF5CEC1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		F95E6B3766340A998C80E590 /* Pods-MOCPulse Today.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MOCPulse Today.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MOCPulse Today/Pods-MOCPulse Today.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		84451E271B5D090400AED9EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84451E2B1B5D090400AED9EC /* NotificationCenter.framework in Frameworks */,
+				97A1B1BDA15FF3B002FB5602 /* Pods_MOCPulse_Today.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		84B2E5561B58FF590071F919 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D9FECEF426917D738F12A65B /* Pods.framework in Frameworks */,
+				6FC5C0D33599EBF36D47F504 /* Pods_MOCPulse_OSX.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +165,10 @@
 			children = (
 				E39E2B8D87EE79B7EAF5CEC1 /* Pods.debug.xcconfig */,
 				09643F4E7B4AE0C53AB3ED0E /* Pods.release.xcconfig */,
+				F95E6B3766340A998C80E590 /* Pods-MOCPulse Today.debug.xcconfig */,
+				0F36BECC1B683336DF37F536 /* Pods-MOCPulse Today.release.xcconfig */,
+				7C0BD41563626336910FA8DD /* Pods-MOCPulse OSX.debug.xcconfig */,
+				39EF1136C37FF0638555D1AA /* Pods-MOCPulse OSX.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -107,6 +182,32 @@
 				849C63FA1B5AE7C100BCEAB1 /* PulseSession.swift */,
 			);
 			name = socket;
+			sourceTree = "<group>";
+		};
+		84451E2C1B5D090400AED9EC /* MOCPulse Today */ = {
+			isa = PBXGroup;
+			children = (
+				84451E431B5D15D800AED9EC /* helpers */,
+				84451E411B5D15C700AED9EC /* models */,
+				84451E331B5D090400AED9EC /* TodayViewController.swift */,
+				84451E351B5D090400AED9EC /* TodayViewController.xib */,
+				84451E3D1B5D095200AED9EC /* VotesListViewController.swift */,
+				84451E3E1B5D095200AED9EC /* VotesListViewController.xib */,
+				84451E2D1B5D090400AED9EC /* Supporting Files */,
+				84451E4A1B5D1FD600AED9EC /* TodayVoteCellView.swift */,
+				8412CE331B5D2375005EF159 /* VoteCellView.xib */,
+			);
+			path = "MOCPulse Today";
+			sourceTree = "<group>";
+		};
+		84451E2D1B5D090400AED9EC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				84451E2E1B5D090400AED9EC /* Info.plist */,
+				84451E2F1B5D090400AED9EC /* MOCPulse_Today.entitlements */,
+				84451E301B5D090400AED9EC /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		849C63FC1B5AEFDE00BCEAB1 /* models */ = {
@@ -133,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				849C64091B5B04B000BCEAB1 /* MainViewController.swift */,
+				84451DA11B5CF7FC00AED9EC /* CreateVoteViewController.swift */,
 			);
 			name = viewcontrollers;
 			sourceTree = "<group>";
@@ -152,6 +254,7 @@
 			children = (
 				84B2E55B1B58FF590071F919 /* MOCPulse OSX */,
 				84B2E56E1B58FF590071F919 /* MOCPulse OSXTests */,
+				84451E2C1B5D090400AED9EC /* MOCPulse Today */,
 				84B2E55A1B58FF590071F919 /* Products */,
 				145824BCB94D1230DEE59CB3 /* Pods */,
 				AC01368B8E96DA8C78426A8C /* Frameworks */,
@@ -163,6 +266,7 @@
 			children = (
 				84B2E5591B58FF590071F919 /* MOCPulse OSX.app */,
 				84B2E56B1B58FF590071F919 /* MOCPulse OSXTests.xctest */,
+				84451E2A1B5D090400AED9EC /* MOCPulse Today.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -170,6 +274,7 @@
 		84B2E55B1B58FF590071F919 /* MOCPulse OSX */ = {
 			isa = PBXGroup;
 			children = (
+				8412CE351B5D2F76005EF159 /* MOCPulse OSX.entitlements */,
 				849C640D1B5B0B0F00BCEAB1 /* views */,
 				849C64081B5B046D00BCEAB1 /* viewcontrollers */,
 				849C63FF1B5AF06B00BCEAB1 /* helpers */,
@@ -214,6 +319,9 @@
 			isa = PBXGroup;
 			children = (
 				3AAD4AE1FB41C5118EF2C445 /* Pods.framework */,
+				84451DA81B5CFD6700AED9EC /* NotificationCenter.framework */,
+				16F6A4724366AF15BFB7E153 /* Pods_MOCPulse_OSX.framework */,
+				B2186831B6BE5A907BE8B667 /* Pods_MOCPulse_Today.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -221,6 +329,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		84451E291B5D090400AED9EC /* MOCPulse Today */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84451E3A1B5D090500AED9EC /* Build configuration list for PBXNativeTarget "MOCPulse Today" */;
+			buildPhases = (
+				2159A08D89A4B3C0C4046522 /* Check Pods Manifest.lock */,
+				84451E261B5D090400AED9EC /* Sources */,
+				84451E271B5D090400AED9EC /* Frameworks */,
+				84451E281B5D090400AED9EC /* Resources */,
+				514E58B2178B283106BE16FF /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MOCPulse Today";
+			productName = "MOCPulse Today";
+			productReference = 84451E2A1B5D090400AED9EC /* MOCPulse Today.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		84B2E5581B58FF590071F919 /* MOCPulse OSX */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84B2E5751B58FF590071F919 /* Build configuration list for PBXNativeTarget "MOCPulse OSX" */;
@@ -231,10 +358,12 @@
 				84B2E5571B58FF590071F919 /* Resources */,
 				D0E6A3108287450F7DC50668 /* Embed Pods Frameworks */,
 				05A112041EDC25DE28F2263F /* Copy Pods Resources */,
+				84451DBB1B5CFD6700AED9EC /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				84451E381B5D090400AED9EC /* PBXTargetDependency */,
 			);
 			name = "MOCPulse OSX";
 			productName = "MOCPulse OSX";
@@ -268,8 +397,17 @@
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "Master of Code";
 				TargetAttributes = {
+					84451E291B5D090400AED9EC = {
+						CreatedOnToolsVersion = 6.4;
+					};
 					84B2E5581B58FF590071F919 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = YA2642A35F;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 					84B2E56A1B58FF590071F919 = {
 						CreatedOnToolsVersion = 6.4;
@@ -292,11 +430,25 @@
 			targets = (
 				84B2E5581B58FF590071F919 /* MOCPulse OSX */,
 				84B2E56A1B58FF590071F919 /* MOCPulse OSXTests */,
+				84451E291B5D090400AED9EC /* MOCPulse Today */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		84451E281B5D090400AED9EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8412CE341B5D2375005EF159 /* VoteCellView.xib in Resources */,
+				84451E401B5D095200AED9EC /* VotesListViewController.xib in Resources */,
+				84451E441B5D15D800AED9EC /* helpers in Resources */,
+				84451E361B5D090400AED9EC /* TodayViewController.xib in Resources */,
+				84451E421B5D15C700AED9EC /* models in Resources */,
+				84451E321B5D090400AED9EC /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		84B2E5571B58FF590071F919 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -328,7 +480,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MOCPulse OSX/Pods-MOCPulse OSX-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2159A08D89A4B3C0C4046522 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		514E58B2178B283106BE16FF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MOCPulse Today/Pods-MOCPulse Today-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		60020156B8284D0FB272D770 /* Check Pods Manifest.lock */ = {
@@ -358,12 +540,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MOCPulse OSX/Pods-MOCPulse OSX-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		84451E261B5D090400AED9EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84451E491B5D19BB00AED9EC /* Alamofire-SwiftyJSON.swift in Sources */,
+				84451E451B5D160300AED9EC /* LocalObjectsManager.swift in Sources */,
+				84451E461B5D160300AED9EC /* API.swift in Sources */,
+				84451E471B5D160300AED9EC /* VoteModel.swift in Sources */,
+				84451E481B5D160300AED9EC /* UserModel.swift in Sources */,
+				84451E3F1B5D095200AED9EC /* VotesListViewController.swift in Sources */,
+				84451E4B1B5D1FD600AED9EC /* TodayVoteCellView.swift in Sources */,
+				84451E341B5D090400AED9EC /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		84B2E5551B58FF590071F919 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -384,6 +581,7 @@
 				8431E28B1B5969B8006955DA /* TcpSocket.swift in Sources */,
 				8431E2911B59C845006955DA /* OAuthLoader.swift in Sources */,
 				84B2E55F1B58FF590071F919 /* AppDelegate.swift in Sources */,
+				84451DA21B5CF7FC00AED9EC /* CreateVoteViewController.swift in Sources */,
 				849C63FB1B5AE7C100BCEAB1 /* PulseSession.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -399,6 +597,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		84451E381B5D090400AED9EC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84451E291B5D090400AED9EC /* MOCPulse Today */;
+			targetProxy = 84451E371B5D090400AED9EC /* PBXContainerItemProxy */;
+		};
 		84B2E56D1B58FF590071F919 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 84B2E5581B58FF590071F919 /* MOCPulse OSX */;
@@ -407,6 +610,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		84451E301B5D090400AED9EC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84451E311B5D090400AED9EC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		84B2E5641B58FF590071F919 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -418,6 +629,38 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		84451E3B1B5D090500AED9EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F95E6B3766340A998C80E590 /* Pods-MOCPulse Today.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "MOCPulse Today/MOCPulse_Today.entitlements";
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MOCPulse Today/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		84451E3C1B5D090500AED9EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F36BECC1B683336DF37F536 /* Pods-MOCPulse Today.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "MOCPulse Today/MOCPulse_Today.entitlements";
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "MOCPulse Today/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		84B2E5731B58FF590071F919 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -435,7 +678,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -457,6 +700,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -479,7 +723,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -494,33 +738,40 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
 			};
 			name = Release;
 		};
 		84B2E5761B58FF590071F919 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E39E2B8D87EE79B7EAF5CEC1 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 7C0BD41563626336910FA8DD /* Pods-MOCPulse OSX.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "MOCPulse OSX/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
 		84B2E5771B58FF590071F919 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 09643F4E7B4AE0C53AB3ED0E /* Pods.release.xcconfig */;
+			baseConfigurationReference = 39EF1136C37FF0638555D1AA /* Pods-MOCPulse OSX.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "MOCPulse OSX/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Ounchecked";
 			};
 			name = Release;
@@ -564,6 +815,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		84451E3A1B5D090500AED9EC /* Build configuration list for PBXNativeTarget "MOCPulse Today" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84451E3B1B5D090500AED9EC /* Debug */,
+				84451E3C1B5D090500AED9EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		84B2E5541B58FF590071F919 /* Build configuration list for PBXProject "MOCPulse OSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

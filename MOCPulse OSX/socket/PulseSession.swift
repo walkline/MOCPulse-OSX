@@ -13,6 +13,8 @@ class PulseSession: NSObject {
     var isAuth : Bool!
     var socket : TcpSocket!
     
+    var userId : String!
+    
     init(socket: TcpSocket) {
         super.init()
         
@@ -87,6 +89,8 @@ class PulseSession: NSObject {
         if var id = packet.content["id"].string {
             if id.isEmpty != true {
                 self.isAuth = true
+                
+                self.userId = id
                 
                 for window in NSApplication.sharedApplication().windows {
                     if var w = window as? NSWindow {

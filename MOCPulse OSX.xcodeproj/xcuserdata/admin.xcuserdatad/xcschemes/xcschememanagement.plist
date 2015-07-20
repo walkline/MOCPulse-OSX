@@ -9,9 +9,44 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>MOCPulse Today.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>84451DA61B5CFD6700AED9EC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>84451DC11B5D00E900AED9EC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>84451DDC1B5D014B00AED9EC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>84451DF71B5D01CF00AED9EC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>84451E121B5D078500AED9EC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>84451E291B5D090400AED9EC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>84B2E5581B58FF590071F919</key>
 		<dict>
 			<key>primary</key>

@@ -15,7 +15,9 @@ let port = 4242
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-      
+        OAuthLoader.sharedInstance.authorize() { didFail, error in
+        }
+            //self.didAuthorize(didFail, error: error)
         TcpSocket.sharedInstance.connect(host, port: port)
 
         NSAppleEventManager.sharedAppleEventManager().setEventHandler(
