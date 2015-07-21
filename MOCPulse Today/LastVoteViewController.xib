@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7706" systemVersion="14A389" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7706"/>
     </dependencies>
@@ -57,7 +57,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </clipView>
                     <constraints>
-                        <constraint firstAttribute="height" constant="67" id="Zjd-LT-E0q"/>
+                        <constraint firstAttribute="height" constant="67" id="Z1a-KL-Iji"/>
                     </constraints>
                     <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="Q81-3A-APx">
                         <rect key="frame" x="-100" y="-100" width="87" height="18"/>
@@ -68,54 +68,63 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
-                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JsI-Tl-FaJ">
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JsI-Tl-FaJ" customClass="ColoredButton" customModule="MOCPulse_Today" customModuleProvider="target">
                     <rect key="frame" x="12" y="5" width="100" height="40"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="40" id="ghF-6G-gi5"/>
-                        <constraint firstAttribute="width" constant="100" id="oKL-4i-Sy9"/>
+                        <constraint firstAttribute="width" constant="100" id="6fi-ki-k4n"/>
+                        <constraint firstAttribute="height" constant="40" id="QHz-0B-ebc"/>
                     </constraints>
                     <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="5O8-11-H0w">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="onRedPressed:" target="-2" id="sbo-hf-FTF"/>
+                    </connections>
                 </button>
-                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MQZ-tN-U56">
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MQZ-tN-U56" customClass="ColoredButton" customModule="MOCPulse_Today" customModuleProvider="target">
                     <rect key="frame" x="208" y="5" width="100" height="40"/>
                     <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="Ogc-lu-h9R">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="onGreenPressed:" target="-2" id="nEm-Y6-C9H"/>
+                    </connections>
                 </button>
-                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pJa-TO-KLu">
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pJa-TO-KLu" customClass="ColoredButton" customModule="MOCPulse_Today" customModuleProvider="target">
                     <rect key="frame" x="110" y="5" width="100" height="40"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="100" id="Cug-mQ-pGH"/>
+                        <constraint firstAttribute="width" constant="100" id="6F4-u4-wxU"/>
                     </constraints>
                     <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="aL1-St-VfO">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="onYellowPressed:" target="-2" id="Agj-T6-w4p"/>
+                    </connections>
                 </button>
             </subviews>
             <constraints>
-                <constraint firstItem="pJa-TO-KLu" firstAttribute="baseline" secondItem="JsI-Tl-FaJ" secondAttribute="baseline" id="2ZI-dx-0kn"/>
-                <constraint firstItem="np4-cE-Prv" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="12" id="6JJ-eb-uVf"/>
-                <constraint firstItem="GRp-jm-pvM" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="AFV-rm-8gp"/>
-                <constraint firstItem="JsI-Tl-FaJ" firstAttribute="width" secondItem="pJa-TO-KLu" secondAttribute="width" id="AuP-sw-BCV"/>
-                <constraint firstItem="MQZ-tN-U56" firstAttribute="width" secondItem="pJa-TO-KLu" secondAttribute="width" id="ECF-uX-wCo"/>
-                <constraint firstItem="JsI-Tl-FaJ" firstAttribute="leading" secondItem="np4-cE-Prv" secondAttribute="leading" id="FZS-Bf-AVB"/>
-                <constraint firstAttribute="trailing" secondItem="GRp-jm-pvM" secondAttribute="trailing" id="HJl-rf-doh"/>
-                <constraint firstItem="np4-cE-Prv" firstAttribute="trailing" secondItem="MQZ-tN-U56" secondAttribute="trailing" id="Iih-qG-So5"/>
-                <constraint firstItem="MQZ-tN-U56" firstAttribute="top" secondItem="pJa-TO-KLu" secondAttribute="top" id="KQm-5f-auk"/>
-                <constraint firstItem="pJa-TO-KLu" firstAttribute="top" secondItem="JsI-Tl-FaJ" secondAttribute="top" id="PZJ-Kx-DqT"/>
-                <constraint firstItem="MQZ-tN-U56" firstAttribute="leading" secondItem="JsI-Tl-FaJ" secondAttribute="trailing" constant="96" id="Wri-b9-sgY"/>
-                <constraint firstItem="JsI-Tl-FaJ" firstAttribute="top" secondItem="np4-cE-Prv" secondAttribute="bottom" constant="3" id="aKf-Fk-rbo"/>
-                <constraint firstItem="np4-cE-Prv" firstAttribute="top" secondItem="GRp-jm-pvM" secondAttribute="bottom" constant="7" id="fHJ-Pt-ntv"/>
-                <constraint firstItem="GRp-jm-pvM" firstAttribute="centerX" secondItem="np4-cE-Prv" secondAttribute="centerX" id="lAz-zk-QIE"/>
-                <constraint firstItem="pJa-TO-KLu" firstAttribute="baseline" secondItem="MQZ-tN-U56" secondAttribute="baseline" id="n9j-iJ-gTg"/>
-                <constraint firstItem="GRp-jm-pvM" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="11" id="nrM-xt-a0R"/>
-                <constraint firstAttribute="bottom" secondItem="JsI-Tl-FaJ" secondAttribute="bottom" constant="5" id="pkx-SP-m44"/>
-                <constraint firstItem="pJa-TO-KLu" firstAttribute="centerX" secondItem="np4-cE-Prv" secondAttribute="centerX" id="r0r-YU-fAt"/>
+                <constraint firstItem="np4-cE-Prv" firstAttribute="trailing" secondItem="MQZ-tN-U56" secondAttribute="trailing" id="8mJ-wg-onU"/>
+                <constraint firstItem="pJa-TO-KLu" firstAttribute="top" secondItem="MQZ-tN-U56" secondAttribute="top" id="A5S-XH-jbk"/>
+                <constraint firstItem="MQZ-tN-U56" firstAttribute="width" secondItem="JsI-Tl-FaJ" secondAttribute="width" id="IwP-Oo-jbw"/>
+                <constraint firstItem="pJa-TO-KLu" firstAttribute="baseline" secondItem="JsI-Tl-FaJ" secondAttribute="baseline" id="Qjk-Iq-QOr"/>
+                <constraint firstItem="np4-cE-Prv" firstAttribute="leading" secondItem="JsI-Tl-FaJ" secondAttribute="leading" id="T7Q-GB-any"/>
+                <constraint firstItem="pJa-TO-KLu" firstAttribute="centerX" secondItem="np4-cE-Prv" secondAttribute="centerX" id="VOv-cO-FTl"/>
+                <constraint firstItem="np4-cE-Prv" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="12" id="W8K-ni-cdP"/>
+                <constraint firstItem="GRp-jm-pvM" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="11" id="WVA-L7-edi"/>
+                <constraint firstItem="MQZ-tN-U56" firstAttribute="leading" secondItem="JsI-Tl-FaJ" secondAttribute="trailing" constant="96" id="YjG-fc-vpr"/>
+                <constraint firstAttribute="bottom" secondItem="JsI-Tl-FaJ" secondAttribute="bottom" constant="5" id="aJN-go-DDY"/>
+                <constraint firstItem="pJa-TO-KLu" firstAttribute="top" secondItem="JsI-Tl-FaJ" secondAttribute="top" id="cUG-32-P3L"/>
+                <constraint firstAttribute="trailing" secondItem="GRp-jm-pvM" secondAttribute="trailing" id="dS9-pJ-1mI"/>
+                <constraint firstItem="GRp-jm-pvM" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="elk-cC-VFa"/>
+                <constraint firstItem="GRp-jm-pvM" firstAttribute="centerX" secondItem="np4-cE-Prv" secondAttribute="centerX" id="f9P-BR-Xgs"/>
+                <constraint firstItem="pJa-TO-KLu" firstAttribute="baseline" secondItem="MQZ-tN-U56" secondAttribute="baseline" id="kfo-Vy-dcb"/>
+                <constraint firstItem="np4-cE-Prv" firstAttribute="top" secondItem="GRp-jm-pvM" secondAttribute="bottom" constant="7" id="po3-vJ-x3o"/>
+                <constraint firstItem="MQZ-tN-U56" firstAttribute="width" secondItem="pJa-TO-KLu" secondAttribute="width" id="qyx-4A-l9f"/>
+                <constraint firstItem="JsI-Tl-FaJ" firstAttribute="top" secondItem="np4-cE-Prv" secondAttribute="bottom" constant="3" id="xt7-Qe-V1C"/>
             </constraints>
             <point key="canvasLocation" x="343" y="308"/>
         </customView>

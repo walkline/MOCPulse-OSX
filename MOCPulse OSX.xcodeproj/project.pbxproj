@@ -41,6 +41,7 @@
 		849C640A1B5B04B000BCEAB1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C64091B5B04B000BCEAB1 /* MainViewController.swift */; };
 		849C64151B5B1BAB00BCEAB1 /* VoteCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C64141B5B1BAB00BCEAB1 /* VoteCellView.swift */; };
 		84ABF0CE1B5C091900129B63 /* PulseAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ABF0CD1B5C091900129B63 /* PulseAnimation.swift */; };
+		84AF82671B5EE3770079A78F /* ColoredButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AF82661B5EE3770079A78F /* ColoredButton.swift */; };
 		84B2E55F1B58FF590071F919 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B2E55E1B58FF590071F919 /* AppDelegate.swift */; };
 		84B2E5631B58FF590071F919 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84B2E5621B58FF590071F919 /* Images.xcassets */; };
 		84B2E5661B58FF590071F919 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B2E5641B58FF590071F919 /* Main.storyboard */; };
@@ -120,6 +121,7 @@
 		849C64091B5B04B000BCEAB1 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = viewcontrollers/MainViewController.swift; sourceTree = "<group>"; };
 		849C64141B5B1BAB00BCEAB1 /* VoteCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VoteCellView.swift; path = views/VoteCellView.swift; sourceTree = "<group>"; };
 		84ABF0CD1B5C091900129B63 /* PulseAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PulseAnimation.swift; path = views/PulseAnimation.swift; sourceTree = "<group>"; };
+		84AF82661B5EE3770079A78F /* ColoredButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColoredButton.swift; sourceTree = "<group>"; };
 		84B2E5591B58FF590071F919 /* MOCPulse OSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MOCPulse OSX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B2E55D1B58FF590071F919 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84B2E55E1B58FF590071F919 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -197,11 +199,12 @@
 				84451E351B5D090400AED9EC /* TodayViewController.xib */,
 				84451E3D1B5D095200AED9EC /* VotesListViewController.swift */,
 				84451E3E1B5D095200AED9EC /* VotesListViewController.xib */,
-				84451E2D1B5D090400AED9EC /* Supporting Files */,
 				84451E4A1B5D1FD600AED9EC /* TodayVoteCellView.swift */,
 				8412CE331B5D2375005EF159 /* VoteCellView.xib */,
 				84B374EF1B5E375A00273293 /* LastVoteViewController.swift */,
 				84B374F01B5E375A00273293 /* LastVoteViewController.xib */,
+				84AF82661B5EE3770079A78F /* ColoredButton.swift */,
+				84451E2D1B5D090400AED9EC /* Supporting Files */,
 			);
 			path = "MOCPulse Today";
 			sourceTree = "<group>";
@@ -557,6 +560,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84AF82671B5EE3770079A78F /* ColoredButton.swift in Sources */,
 				84451E491B5D19BB00AED9EC /* Alamofire-SwiftyJSON.swift in Sources */,
 				84451E451B5D160300AED9EC /* LocalObjectsManager.swift in Sources */,
 				84451E461B5D160300AED9EC /* API.swift in Sources */,
@@ -686,7 +690,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Developer ID Application: MasterOfCode LLC (ZLW345FG82)";
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -731,7 +735,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Developer ID Application: MasterOfCode LLC (ZLW345FG82)";
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;

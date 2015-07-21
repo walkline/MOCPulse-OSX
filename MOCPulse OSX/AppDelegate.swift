@@ -8,7 +8,7 @@
 
 import Cocoa
 
-let host = "192.168.4.40"
+let host = "78.137.59.46"
 let port = 4242
 
 var mainWindow : NSWindowController?
@@ -40,12 +40,50 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             NSApplication.sharedApplication().activateIgnoringOtherApps(true)
             if let url = NSURL(string: urlString) {
                 println(url)
-                OAuthLoader.sharedInstance.handleRedirectURL(url)
-                //RedditLoader.handleRedirectURL(url)
+                if (url.scheme == "mocpulse") {
+                    self.handleWidgetsOpenUrl(url)
+                } else {
+                    OAuthLoader.sharedInstance.handleRedirectURL(url)
+                }
             }
         }
         else {
             NSLog("No valid URL to handle")
+        }
+    }
+    
+    func handleWidgetsOpenUrl(url: NSURL)
+    {
+        var host = url.host
+        
+        switch url.host! {
+        case "openvote":
+            var param : [AnyObject] = url.pathComponents!
+            var voteId: String = param[1] as! String
+            
+            NSNotificationCenter.defaultCenter().postNotificationName("NOTIFICATION_SHOW_VIEW", object: nil, userInfo: ["voteId":voteId])
+            
+        case "vote":
+            var param : [AnyObject] = url.pathComponents!
+            var strcolor: String = param[1] as! String
+            var voteId: String = param[2] as! String
+            
+            var color : VoteColor = VoteColor.VOTE_COLOR_GREEN
+            
+            switch strcolor {
+            case "green": color = VoteColor.VOTE_COLOR_GREEN
+            case "yellow": color = VoteColor.VOTE_COLOR_YELLOW
+            case "red": color = VoteColor.VOTE_COLOR_RED
+            default : break
+            }
+            
+            // need auth check?
+            VoteModel.voteFor(id: voteId, color: color, completion: { (vote) -> Void in
+                NSNotificationCenter.defaultCenter().postNotificationName("NOTIFICATION_SHOW_VIEW", object: nil, userInfo: ["vote":vote!])
+            })
+            
+        default: break
+            //println("Unknown url for scheme ", &action)
         }
     }
     

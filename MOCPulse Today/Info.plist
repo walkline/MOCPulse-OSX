@@ -31,7 +31,7 @@
 		<key>NSExtensionPrincipalClass</key>
 		<string>$(PRODUCT_MODULE_NAME).TodayViewController</string>
 		<key>com.apple.notificationcenter.widget.description</key>
-		<string>MOCPulse Today</string>
+		<string>MOCPulse</string>
 	</dict>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2015 Master of Code. All rights reserved.</string>

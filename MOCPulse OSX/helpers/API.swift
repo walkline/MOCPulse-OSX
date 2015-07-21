@@ -12,7 +12,7 @@ import SwiftyJSON
 
 
 let kDevServer : String = "http://localhost:3000/"
-let kProductionServer : String = "http://192.168.4.40:8080/"
+let kProductionServer : String = "http://78.137.59.46:3001/"
 let kAuthorizationServer : String = "http://fritzvl.info/"
 
 class API : NSObject {
