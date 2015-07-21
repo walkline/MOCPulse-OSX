@@ -31,6 +31,7 @@
 		84451E481B5D160300AED9EC /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C63FD1B5AF01300BCEAB1 /* UserModel.swift */; };
 		84451E491B5D19BB00AED9EC /* Alamofire-SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C64021B5AF10D00BCEAB1 /* Alamofire-SwiftyJSON.swift */; };
 		84451E4B1B5D1FD600AED9EC /* TodayVoteCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84451E4A1B5D1FD600AED9EC /* TodayVoteCellView.swift */; };
+		847345791B5E5DB400354D76 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847345781B5E5DB400354D76 /* AuthViewController.swift */; };
 		849C63FB1B5AE7C100BCEAB1 /* PulseSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C63FA1B5AE7C100BCEAB1 /* PulseSession.swift */; };
 		849C63FE1B5AF01300BCEAB1 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C63FD1B5AF01300BCEAB1 /* UserModel.swift */; };
 		849C64011B5AF09100BCEAB1 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C64001B5AF09100BCEAB1 /* API.swift */; };
@@ -41,10 +42,11 @@
 		849C64151B5B1BAB00BCEAB1 /* VoteCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C64141B5B1BAB00BCEAB1 /* VoteCellView.swift */; };
 		84ABF0CE1B5C091900129B63 /* PulseAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ABF0CD1B5C091900129B63 /* PulseAnimation.swift */; };
 		84B2E55F1B58FF590071F919 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B2E55E1B58FF590071F919 /* AppDelegate.swift */; };
-		84B2E5611B58FF590071F919 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B2E5601B58FF590071F919 /* ViewController.swift */; };
 		84B2E5631B58FF590071F919 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84B2E5621B58FF590071F919 /* Images.xcassets */; };
 		84B2E5661B58FF590071F919 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B2E5641B58FF590071F919 /* Main.storyboard */; };
 		84B2E5721B58FF590071F919 /* MOCPulse_OSXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B2E5711B58FF590071F919 /* MOCPulse_OSXTests.swift */; };
+		84B374F11B5E375A00273293 /* LastVoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B374EF1B5E375A00273293 /* LastVoteViewController.swift */; };
+		84B374F21B5E375A00273293 /* LastVoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B374F01B5E375A00273293 /* LastVoteViewController.xib */; };
 		97A1B1BDA15FF3B002FB5602 /* Pods_MOCPulse_Today.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2186831B6BE5A907BE8B667 /* Pods_MOCPulse_Today.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		D9FECEF426917D738F12A65B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AAD4AE1FB41C5118EF2C445 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
@@ -108,6 +110,7 @@
 		84451E411B5D15C700AED9EC /* models */ = {isa = PBXFileReference; lastKnownFileType = folder; name = models; path = "MOCPulse OSX/models"; sourceTree = SOURCE_ROOT; };
 		84451E431B5D15D800AED9EC /* helpers */ = {isa = PBXFileReference; lastKnownFileType = folder; name = helpers; path = "MOCPulse OSX/helpers"; sourceTree = SOURCE_ROOT; };
 		84451E4A1B5D1FD600AED9EC /* TodayVoteCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayVoteCellView.swift; sourceTree = "<group>"; };
+		847345781B5E5DB400354D76 /* AuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		849C63FA1B5AE7C100BCEAB1 /* PulseSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PulseSession.swift; path = socket/PulseSession.swift; sourceTree = "<group>"; };
 		849C63FD1B5AF01300BCEAB1 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserModel.swift; path = models/UserModel.swift; sourceTree = "<group>"; };
 		849C64001B5AF09100BCEAB1 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = helpers/API.swift; sourceTree = "<group>"; };
@@ -120,12 +123,13 @@
 		84B2E5591B58FF590071F919 /* MOCPulse OSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MOCPulse OSX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B2E55D1B58FF590071F919 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84B2E55E1B58FF590071F919 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		84B2E5601B58FF590071F919 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		84B2E5621B58FF590071F919 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		84B2E5651B58FF590071F919 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84B2E56B1B58FF590071F919 /* MOCPulse OSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MOCPulse OSXTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B2E5701B58FF590071F919 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84B2E5711B58FF590071F919 /* MOCPulse_OSXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOCPulse_OSXTests.swift; sourceTree = "<group>"; };
+		84B374EF1B5E375A00273293 /* LastVoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastVoteViewController.swift; sourceTree = "<group>"; };
+		84B374F01B5E375A00273293 /* LastVoteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LastVoteViewController.xib; sourceTree = "<group>"; };
 		B2186831B6BE5A907BE8B667 /* Pods_MOCPulse_Today.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MOCPulse_Today.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E39E2B8D87EE79B7EAF5CEC1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F95E6B3766340A998C80E590 /* Pods-MOCPulse Today.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MOCPulse Today.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MOCPulse Today/Pods-MOCPulse Today.debug.xcconfig"; sourceTree = "<group>"; };
@@ -196,6 +200,8 @@
 				84451E2D1B5D090400AED9EC /* Supporting Files */,
 				84451E4A1B5D1FD600AED9EC /* TodayVoteCellView.swift */,
 				8412CE331B5D2375005EF159 /* VoteCellView.xib */,
+				84B374EF1B5E375A00273293 /* LastVoteViewController.swift */,
+				84B374F01B5E375A00273293 /* LastVoteViewController.xib */,
 			);
 			path = "MOCPulse Today";
 			sourceTree = "<group>";
@@ -235,6 +241,7 @@
 			children = (
 				849C64091B5B04B000BCEAB1 /* MainViewController.swift */,
 				84451DA11B5CF7FC00AED9EC /* CreateVoteViewController.swift */,
+				847345781B5E5DB400354D76 /* AuthViewController.swift */,
 			);
 			name = viewcontrollers;
 			sourceTree = "<group>";
@@ -281,7 +288,6 @@
 				8431E2891B5969A5006955DA /* socket */,
 				849C63FC1B5AEFDE00BCEAB1 /* models */,
 				84B2E55E1B58FF590071F919 /* AppDelegate.swift */,
-				84B2E5601B58FF590071F919 /* ViewController.swift */,
 				84B2E5621B58FF590071F919 /* Images.xcassets */,
 				84B2E5641B58FF590071F919 /* Main.storyboard */,
 				84B2E55C1B58FF590071F919 /* Supporting Files */,
@@ -441,6 +447,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8412CE341B5D2375005EF159 /* VoteCellView.xib in Resources */,
+				84B374F21B5E375A00273293 /* LastVoteViewController.xib in Resources */,
 				84451E401B5D095200AED9EC /* VotesListViewController.xib in Resources */,
 				84451E441B5D15D800AED9EC /* helpers in Resources */,
 				84451E361B5D090400AED9EC /* TodayViewController.xib in Resources */,
@@ -558,6 +565,7 @@
 				84451E3F1B5D095200AED9EC /* VotesListViewController.swift in Sources */,
 				84451E4B1B5D1FD600AED9EC /* TodayVoteCellView.swift in Sources */,
 				84451E341B5D090400AED9EC /* TodayViewController.swift in Sources */,
+				84B374F11B5E375A00273293 /* LastVoteViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -570,7 +578,6 @@
 				849C640A1B5B04B000BCEAB1 /* MainViewController.swift in Sources */,
 				849C64011B5AF09100BCEAB1 /* API.swift in Sources */,
 				849C64051B5AF10D00BCEAB1 /* LocalObjectsManager.swift in Sources */,
-				84B2E5611B58FF590071F919 /* ViewController.swift in Sources */,
 				849C64041B5AF10D00BCEAB1 /* Alamofire-SwiftyJSON.swift in Sources */,
 				844221F71B5BC224007251F7 /* ChartView.swift in Sources */,
 				849C64151B5B1BAB00BCEAB1 /* VoteCellView.swift in Sources */,
@@ -582,6 +589,7 @@
 				8431E2911B59C845006955DA /* OAuthLoader.swift in Sources */,
 				84B2E55F1B58FF590071F919 /* AppDelegate.swift in Sources */,
 				84451DA21B5CF7FC00AED9EC /* CreateVoteViewController.swift in Sources */,
+				847345791B5E5DB400354D76 /* AuthViewController.swift in Sources */,
 				849C63FB1B5AE7C100BCEAB1 /* PulseSession.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -678,7 +686,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Developer ID Application: MasterOfCode LLC (ZLW345FG82)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -723,7 +731,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Developer ID Application: MasterOfCode LLC (ZLW345FG82)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;

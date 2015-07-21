@@ -98,6 +98,8 @@ class PulseSession: NSObject {
                     }
                 }
                 
+                NSNotificationCenter.defaultCenter().postNotificationName("didAuth", object: nil)
+                
                 self.getVotesQuery()
                 
                 return

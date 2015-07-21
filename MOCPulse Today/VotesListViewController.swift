@@ -11,6 +11,8 @@ import NotificationCenter
 
 
 class VotesListViewController: NSViewController, NCWidgetProviding, NSTableViewDataSource, NSTableViewDelegate {
+    
+    @IBOutlet weak var tableView: NSTableView!
 
     override var nibName: String? {
         return "VotesListViewController"
@@ -26,7 +28,6 @@ class VotesListViewController: NSViewController, NCWidgetProviding, NSTableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        println("im loaded too")
     }
     
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
@@ -37,6 +38,10 @@ class VotesListViewController: NSViewController, NCWidgetProviding, NSTableViewD
         }
         
         return votes!.count
+    }
+    
+    func tableView(tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
+        return 40
     }
     
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
@@ -55,4 +60,16 @@ class VotesListViewController: NSViewController, NCWidgetProviding, NSTableViewD
         return cell
     }
     
+    func tableViewSelectionDidChange(notification: NSNotification) {
+        var row = self.tableView.selectedRow
+        
+        if (row < 0) {
+            return
+        }
+        
+        self.tableView.deselectRow(row)
+        
+        let url:NSURL = NSURL(string:  NSString(format: "mocpulse://openvote/%@", LocalObjectsManager.sharedInstance.votes![row].id!) as String)!
+        NSWorkspace.sharedWorkspace().openURL(url)
+    }
 }

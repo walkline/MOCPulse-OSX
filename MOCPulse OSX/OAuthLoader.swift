@@ -36,6 +36,8 @@ class OAuthLoader {
     func authorize(callback: (wasFailure: Bool, error: NSError?) -> Void) {
         oauth2.onAuthorize = { parameters in
             println("Did authorize with parameters: \(parameters)")
+            TcpSocket.sharedInstance.connect(host, port: port)
+
         }
         oauth2.afterAuthorizeOrFailure = callback
         oauth2.authorize()

@@ -22,6 +22,8 @@ class TodayVoteCellView: NSTableCellView {
 
         self.nameField.stringValue = vote.name!
         
+        self.coloredView.layer = CALayer()
+        
         if (vote.greenVotes > vote.yellowVotes && vote.greenVotes > vote.redVotes) {
             self.coloredView.layer!.backgroundColor = GREEN_COLOR
         } else if (vote.yellowVotes > vote.greenVotes && vote.yellowVotes > vote.redVotes) {
@@ -29,15 +31,16 @@ class TodayVoteCellView: NSTableCellView {
         } else if (vote.redVotes > vote.greenVotes && vote.redVotes > vote.yellowVotes) {
             self.coloredView.layer!.backgroundColor = RED_COLOR
         } else {
-            self.coloredView.layer!.backgroundColor = CGColorCreateGenericRGB(0/255, 0/255, 0/255, 1)
+            var n = self.coloredView.layer!
+            self.coloredView.layer!.backgroundColor = CGColorCreateGenericRGB(255/255, 255/255, 255/255, 1)
         }
+        
+        self.coloredView.wantsLayer = true
     }
     
     override func drawRect(dirtyRect: NSRect) {
         super.drawRect(dirtyRect)
         
-        //coloredView.layer!.backgroundColor = CGColorCreateGenericRGB(14/255, 60/255, 62/255, 1)
-        coloredView.layer!.cornerRadius = 5
+        coloredView.layer!.cornerRadius = 6
     }
-    
 }

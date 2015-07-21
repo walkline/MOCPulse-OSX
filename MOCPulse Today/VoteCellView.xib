@@ -8,19 +8,19 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <tableCellView simulatedAppContext="notificationCenter" translatesAutoresizingMaskIntoConstraints="NO" id="luJ-UZ-N1o" customClass="TodayVoteCellView" customModule="MOCPulse_Today" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="327" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="327" height="40"/>
             <subviews>
+                <customView identifier="VoteCell" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8dZ-7U-06Z">
+                    <rect key="frame" x="13" y="15" width="12" height="12"/>
+                </customView>
                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2ke-Or-49U">
-                    <rect key="frame" x="56" y="8" width="270" height="34"/>
+                    <rect key="frame" x="38" y="10" width="288" height="20"/>
                     <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Multiline Label" id="ghx-e2-A7F">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <customView identifier="VoteCell" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8dZ-7U-06Z">
-                    <rect key="frame" x="13" y="15" width="20" height="20"/>
-                </customView>
             </subviews>
             <connections>
                 <outlet property="coloredView" destination="8dZ-7U-06Z" id="5vj-eH-63F"/>

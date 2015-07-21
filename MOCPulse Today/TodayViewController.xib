@@ -19,7 +19,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="28" id="4Yb-ZR-gMg"/>
                     </constraints>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="MOCPulse Yesterday" id="pgq-dU-GDk">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="MOCPulse" id="pgq-dU-GDk">
                         <font key="font" metaFont="system" size="23"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>

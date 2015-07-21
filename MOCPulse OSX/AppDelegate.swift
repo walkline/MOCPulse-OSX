@@ -8,17 +8,18 @@
 
 import Cocoa
 
-let host = "192.168.4.56"
+let host = "192.168.4.40"
 let port = 4242
+
+var mainWindow : NSWindowController?
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        OAuthLoader.sharedInstance.authorize() { didFail, error in
-        }
+//        OAuthLoader.sharedInstance.authorize() { didFail, error in
+//        }
             //self.didAuthorize(didFail, error: error)
-        TcpSocket.sharedInstance.connect(host, port: port)
 
         NSAppleEventManager.sharedAppleEventManager().setEventHandler(
             self,
@@ -35,10 +36,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func handleURLEvent(event: NSAppleEventDescriptor, withReply reply: NSAppleEventDescriptor) {
-        println("handleURLEvent")
         if let urlString = event.paramDescriptorForKeyword(AEKeyword(keyDirectObject))?.stringValue {
+            NSApplication.sharedApplication().activateIgnoringOtherApps(true)
             if let url = NSURL(string: urlString) {
-                println("oooook")
                 println(url)
                 OAuthLoader.sharedInstance.handleRedirectURL(url)
                 //RedditLoader.handleRedirectURL(url)

@@ -17,16 +17,12 @@ class TodayViewController: NSViewController, NCWidgetProviding {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        self.up
     }
 
     override func viewDidAppear() {
         super.viewDidAppear()
-        
-        println("try load")
+
         VoteModel.votes(completion: { (arr: [VoteModel]?) -> Void in
-            println("loaded")
             if arr?.count < 0 {
                 return
             }
@@ -34,14 +30,30 @@ class TodayViewController: NSViewController, NCWidgetProviding {
             LocalObjectsManager.sharedInstance.votes = arr
             LocalObjectsManager.sharedInstance.sortVotesByDate()
             
-            var vc = VotesListViewController(nibName: "VotesListViewController", bundle: NSBundle(forClass: self.classForCoder))
-            //self.view.addSubview(vc!.view)
-            self.presentViewControllerInWidget(vc)
-            println("end")
-
+            var lastUnVotedVote = LocalObjectsManager.sharedInstance.getLastVote()
+            if lastUnVotedVote == nil {
+                self.showVotesList()
+                return
+            }
+               
+            if (lastUnVotedVote?.voted == true) {
+                self.showVotesList()
+            } else {
+                self.showLastVote(lastUnVotedVote!)
+            }
         })
-
-        println("did load")
+        
+    }
+    
+    func showVotesList() {
+        var vc = VotesListViewController(nibName: "VotesListViewController", bundle: NSBundle(forClass: self.classForCoder))
+        self.presentViewControllerInWidget(vc)
+    }
+    
+    func showLastVote(vote: VoteModel) {
+        var vc = LastVoteViewController(nibName: "LastVoteViewController", bundle: NSBundle(forClass: self.classForCoder))
+        vc?.vote = vote
+        self.presentViewControllerInWidget(vc)
     }
     
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
@@ -49,11 +61,7 @@ class TodayViewController: NSViewController, NCWidgetProviding {
         // with NoData if nothing has changed or NewData if there is new data since the last
         // time we called you
         
-        println("widgetPerformUpdateWithCompletionHandler")
-        
         completionHandler(.NoData)
-        
-
     }
 
 }

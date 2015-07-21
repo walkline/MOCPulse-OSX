@@ -11,6 +11,7 @@ import Cocoa
 let RED_COLOR = NSColor(calibratedRed: 221/255, green: 42/255, blue: 61/255, alpha: 1)
 let YELLOW_COLOR = NSColor(calibratedRed: 252/255, green: 210/255, blue: 56/255, alpha: 1)
 let GREEN_COLOR = NSColor(calibratedRed: 130/255, green: 177/255, blue: 17/255, alpha: 1)
+let BLUE_COLOR = NSColor(calibratedRed: 57/255, green: 123/255, blue: 250/255, alpha: 1)
 
 class MainViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
     
@@ -33,12 +34,20 @@ class MainViewController: NSViewController, NSTableViewDataSource, NSTableViewDe
     
     @IBOutlet weak var animationView: NSView!
     
+    @IBOutlet weak var topLeftBar: NSView!
+    
+    @IBOutlet weak var votedTab: NSButton!
     var vote : VoteModel?
+    @IBOutlet weak var pendingTab: NSButton!
     
     var pulseEffect : PulseAnimation!
     
+    var isTabPending : Bool!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.isTabPending = true
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateTable:", name:"reloadVotes", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateVote:", name:"voteUpdated", object: nil)
@@ -53,14 +62,20 @@ class MainViewController: NSViewController, NSTableViewDataSource, NSTableViewDe
     }
     
     func setupView() {
-        self.redButton.backgroundColor = NSColor(calibratedRed: 221/255, green: 42/255, blue: 61/255, alpha: 1)
-        self.yellowButton.backgroundColor = NSColor(calibratedRed: 252/255, green: 210/255, blue: 56/255, alpha: 1)
-        self.greenButton.backgroundColor = NSColor(calibratedRed: 130/255, green: 177/255, blue: 17/255, alpha: 1)
+        self.redButton.backgroundColor = RED_COLOR
+        self.yellowButton.backgroundColor = YELLOW_COLOR
+        self.greenButton.backgroundColor = GREEN_COLOR
+        
+        self.topLeftBar.wantsLayer = true
+        self.topLeftBar.layer?.borderWidth = 1
+        self.topLeftBar.layer?.borderColor = NSColor(calibratedRed: 200/255, green: 200/255, blue: 200/255, alpha: 1).CGColor
         
         var center = CGPointMake((animationView.bounds.origin.x + (animationView.bounds.size.width / 2)), (animationView.bounds.size.height / 2))
         
         var screenRect : CGRect = NSScreen.mainScreen()!.frame
         pulseEffect = PulseAnimation(radius: animationView.frame.size.height, position: center)
+        
+        setButtonColor(self.pendingTab, color: BLUE_COLOR)
     }
     
     func showPulseAnimation(color : NSColor) {
@@ -77,7 +92,7 @@ class MainViewController: NSViewController, NSTableViewDataSource, NSTableViewDe
     }
     
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
-        var votes : [VoteModel]? = LocalObjectsManager.sharedInstance.votes
+        var votes : [VoteModel]? = tableArray() as! [VoteModel]
         if (votes == nil) {
             return 0
         }
@@ -87,8 +102,12 @@ class MainViewController: NSViewController, NSTableViewDataSource, NSTableViewDe
     
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
         var cell = tableView.makeViewWithIdentifier("Cell", owner: self) as! VoteCellView
-        cell.voteName.stringValue = LocalObjectsManager.sharedInstance.votes![row].name!
-        cell.authorField.stringValue = LocalObjectsManager.sharedInstance.votes![row].owner!
+        
+        var vote: VoteModel = tableArray()[row] as! VoteModel
+        
+        cell.voteName.stringValue = vote.name!
+        cell.authorField.stringValue = vote.owner!
+        
         return cell
     }
     
@@ -97,7 +116,7 @@ class MainViewController: NSViewController, NSTableViewDataSource, NSTableViewDe
             return
         }
         
-        var votes : [VoteModel]? = LocalObjectsManager.sharedInstance.votes
+        var votes : [VoteModel]? = tableArray() as? [VoteModel]
         if (votes != nil) {
             showVote(votes![self.tableView.selectedRow])
         }
@@ -163,10 +182,8 @@ class MainViewController: NSViewController, NSTableViewDataSource, NSTableViewDe
         }
         
         showPulseAnimation(RED_COLOR)
-        
-        vote?.voted = true
-        
-        TcpSocket.sharedInstance.session?.voteFor(vote!.id!, colorId: VoteColor.VOTE_COLOR_RED.rawValue)
+
+        voteFor(vote!, color: VoteColor.VOTE_COLOR_RED.rawValue)
     }
     
     @IBAction func greenButtonPressed(sender: AnyObject) {
@@ -176,9 +193,7 @@ class MainViewController: NSViewController, NSTableViewDataSource, NSTableViewDe
         
         showPulseAnimation(GREEN_COLOR)
         
-        vote?.voted = true
-        
-        TcpSocket.sharedInstance.session?.voteFor(vote!.id!, colorId: VoteColor.VOTE_COLOR_GREEN.rawValue)
+        voteFor(vote!, color: VoteColor.VOTE_COLOR_GREEN.rawValue)
     }
     
     @IBAction func yellowButtonPressed(sender: AnyObject) {
@@ -188,11 +203,54 @@ class MainViewController: NSViewController, NSTableViewDataSource, NSTableViewDe
         
         showPulseAnimation(YELLOW_COLOR)
         
-        vote?.voted = true
-        
-        TcpSocket.sharedInstance.session?.voteFor(vote!.id!, colorId: VoteColor.VOTE_COLOR_YELLOW.rawValue)
+        voteFor(vote!, color: VoteColor.VOTE_COLOR_YELLOW.rawValue)
     }
     
-    @IBAction func createPressed(sender: AnyObject) {
+    func voteFor(vote: VoteModel, color: Int) {
+        vote.voted = true
+        TcpSocket.sharedInstance.session?.voteFor(vote.id!, colorId: color)
+        self.tableView.reloadData()
     }
+    
+    func tableArray() -> NSArray {
+        var votes = LocalObjectsManager.sharedInstance.votes
+        
+        if votes != nil {
+            var votesArray = votes?.filter{(vote:VoteModel) in vote.voted != self.isTabPending}
+            var arrayToSort = NSArray(array: votesArray!)
+            
+            var descriptor: NSSortDescriptor = NSSortDescriptor(key: "create", ascending: false)
+            
+            var arraySorted: NSArray = arrayToSort.sortedArrayUsingDescriptors([descriptor])
+            
+            return arraySorted
+        }
+        return NSArray()
+    }
+    
+    func setButtonColor(button: NSButton, color: NSColor) {
+        var colorTitle = NSMutableAttributedString(attributedString: button.attributedTitle)
+        var titleRange = NSMakeRange(0, colorTitle.length)
+        colorTitle.addAttribute(NSForegroundColorAttributeName, value: color, range: titleRange)
+        button.attributedTitle = colorTitle
+    }
+    
+    @IBAction func onVotedPressed(sender: AnyObject) {
+        self.isTabPending = false
+        
+        setButtonColor(self.votedTab, color: BLUE_COLOR)
+        setButtonColor(self.pendingTab, color: NSColor.blackColor())
+        
+        self.tableView.reloadData()
+    }
+
+    @IBAction func onPendingPressed(sender: AnyObject) {
+        self.isTabPending = true
+        
+        setButtonColor(self.pendingTab, color: BLUE_COLOR)
+        setButtonColor(self.votedTab, color: NSColor.blackColor())
+        
+        self.tableView.reloadData()
+    }
+    
 }
