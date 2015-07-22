@@ -707,7 +707,7 @@
                                     </subviews>
                                     <color key="backgroundColor" red="0.83529411764705885" green="0.82665229024134068" blue="0.49269215940677541" alpha="1" colorSpace="calibratedRGB"/>
                                 </clipView>
-                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="0.75500493864655993" horizontal="YES" id="qpp-QR-oAq">
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="qpp-QR-oAq">
                                     <rect key="frame" x="1" y="113.8147588968277" width="227" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
@@ -764,13 +764,13 @@
                                         </scroller>
                                     </scrollView>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="dM5-Ph-O7q" customClass="ColorChart" customModule="MOCPulse_OSX" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="133" width="350" height="27"/>
+                                        <rect key="frame" x="20" y="120" width="350" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="27" id="pfU-kZ-8cY"/>
+                                            <constraint firstAttribute="height" constant="40" id="pfU-kZ-8cY"/>
                                         </constraints>
                                     </customView>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="xKV-NA-sbZ">
-                                        <rect key="frame" x="20" y="121" width="350" height="50"/>
+                                        <rect key="frame" x="20" y="115" width="350" height="50"/>
                                         <subviews>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Opw-3J-T84">
                                                 <rect key="frame" x="0.0" y="0.0" width="117" height="50"/>
@@ -839,7 +839,7 @@
                                 </constraints>
                             </customView>
                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Ed-zy-hOn">
-                                <rect key="frame" x="-2" y="412" width="253" height="31"/>
+                                <rect key="frame" x="-2" y="412" width="255" height="31"/>
                                 <subviews>
                                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZGw-ro-9Gi">
                                         <rect key="frame" x="119" y="9" width="15" height="13"/>

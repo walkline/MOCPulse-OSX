@@ -14,9 +14,9 @@ class ColorChart: NSView {
     var yellowColor : ColorChartObject?
     var greenColor : ColorChartObject?
     
-    var redLabel : NSTextField?
-    var yellowLabel : NSTextField?
-    var greenLabel : NSTextField?
+    var redLabel : CenteredTextField?
+    var yellowLabel : CenteredTextField?
+    var greenLabel : CenteredTextField?
     
     var colorsAray : NSMutableArray?
     
@@ -59,10 +59,9 @@ class ColorChart: NSView {
         return redColor!
     }
     
-    func getGreenLabel() -> NSTextField {
+    func getGreenLabel() -> CenteredTextField {
         if (greenLabel == nil) {
-            greenLabel = NSTextField()
-            greenLabel?.wantsLayer = true
+            greenLabel = CenteredTextField()
             greenLabel?.bezeled = false
             greenLabel?.drawsBackground = false
             greenLabel?.selectable = false
@@ -74,9 +73,9 @@ class ColorChart: NSView {
         return greenLabel!
     }
     
-    func getYellowLabel() -> NSTextField {
+    func getYellowLabel() -> CenteredTextField {
         if (yellowLabel == nil) {
-            yellowLabel = NSTextField()
+            yellowLabel = CenteredTextField()
             yellowLabel?.wantsLayer = true
             yellowLabel?.bezeled = false
             yellowLabel?.drawsBackground = false
@@ -90,9 +89,9 @@ class ColorChart: NSView {
         return yellowLabel!
     }
     
-    func getRedLabel() -> NSTextField {
+    func getRedLabel() -> CenteredTextField {
         if (redLabel == nil) {
-            redLabel = NSTextField()
+            redLabel = CenteredTextField()
             redLabel?.wantsLayer = true
             redLabel?.bezeled = false
             redLabel?.drawsBackground = false
@@ -174,7 +173,7 @@ class ColorChart: NSView {
             
             self.fillRectWithColorOnContext(lastSegmentRect, color: color, currentGraphicsContext: currentGraphicsContext)
             
-            var label = NSTextField()
+            var label = CenteredTextField()
             
             if (colorObject == greenColor) {
                 label = self.getGreenLabel()
@@ -187,7 +186,7 @@ class ColorChart: NSView {
             }
             
             label.frame = lastSegmentRect
-            label.stringValue = NSString(format: "%.0f", colorObject!.val) as String
+            label.val = NSString(format: "%.0f", colorObject!.val) as String
         }
     }
     

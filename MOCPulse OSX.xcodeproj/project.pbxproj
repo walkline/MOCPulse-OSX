@@ -10,6 +10,7 @@
 		6FC5C0D33599EBF36D47F504 /* Pods_MOCPulse_OSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16F6A4724366AF15BFB7E153 /* Pods_MOCPulse_OSX.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		8401CE231B5F7CE000CD6D71 /* ColorChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8401CE211B5F7CE000CD6D71 /* ColorChart.swift */; };
 		8401CE241B5F7CE000CD6D71 /* ColorChartObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8401CE221B5F7CE000CD6D71 /* ColorChartObject.swift */; };
+		8401CE261B5F952300CD6D71 /* CenteredTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8401CE251B5F952300CD6D71 /* CenteredTextField.swift */; };
 		8412CE341B5D2375005EF159 /* VoteCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8412CE331B5D2375005EF159 /* VoteCellView.xib */; };
 		8431E28B1B5969B8006955DA /* TcpSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8431E28A1B5969B8006955DA /* TcpSocket.swift */; };
 		8431E28D1B596A09006955DA /* PulsePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8431E28C1B596A09006955DA /* PulsePacket.swift */; };
@@ -93,6 +94,7 @@
 		7C0BD41563626336910FA8DD /* Pods-MOCPulse OSX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MOCPulse OSX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MOCPulse OSX/Pods-MOCPulse OSX.debug.xcconfig"; sourceTree = "<group>"; };
 		8401CE211B5F7CE000CD6D71 /* ColorChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorChart.swift; path = views/ColorChart.swift; sourceTree = "<group>"; };
 		8401CE221B5F7CE000CD6D71 /* ColorChartObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorChartObject.swift; path = views/ColorChartObject.swift; sourceTree = "<group>"; };
+		8401CE251B5F952300CD6D71 /* CenteredTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CenteredTextField.swift; path = views/CenteredTextField.swift; sourceTree = "<group>"; };
 		8412CE331B5D2375005EF159 /* VoteCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VoteCellView.xib; sourceTree = "<group>"; };
 		8412CE351B5D2F76005EF159 /* MOCPulse OSX.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "MOCPulse OSX.entitlements"; sourceTree = "<group>"; };
 		8431E28A1B5969B8006955DA /* TcpSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TcpSocket.swift; path = socket/TcpSocket.swift; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 				849C64141B5B1BAB00BCEAB1 /* VoteCellView.swift */,
 				844221F61B5BC224007251F7 /* ChartView.swift */,
 				84ABF0CD1B5C091900129B63 /* PulseAnimation.swift */,
+				8401CE251B5F952300CD6D71 /* CenteredTextField.swift */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -597,6 +600,7 @@
 				8431E28D1B596A09006955DA /* PulsePacket.swift in Sources */,
 				8431E28B1B5969B8006955DA /* TcpSocket.swift in Sources */,
 				8431E2911B59C845006955DA /* OAuthLoader.swift in Sources */,
+				8401CE261B5F952300CD6D71 /* CenteredTextField.swift in Sources */,
 				84B2E55F1B58FF590071F919 /* AppDelegate.swift in Sources */,
 				84451DA21B5CF7FC00AED9EC /* CreateVoteViewController.swift in Sources */,
 				847345791B5E5DB400354D76 /* AuthViewController.swift in Sources */,
