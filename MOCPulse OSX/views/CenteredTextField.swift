@@ -12,10 +12,8 @@ class CenteredTextField: NSTextField {
     var val : NSString!
     
     override func drawRect(dirtyRect: NSRect) {
-
         super.drawRect(dirtyRect)
         var text : NSString = val
-        println()
         text.drawInRect(adjustedFrameToVerticallyCenterText(dirtyRect), withAttributes: [NSForegroundColorAttributeName:NSColor.whiteColor()])
     }
     

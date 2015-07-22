@@ -13,8 +13,12 @@ class TcpSocket: NSObject, NSStreamDelegate {
     
     static var sharedInstance = TcpSocket()
     
+    var host : String!
+    var port : Int!
+    
     var session : PulseSession?
     var isopen : Bool!
+    var isReconnecting : Bool!
     
     private var input : NSInputStream?
     private var output: NSOutputStream?
@@ -31,9 +35,15 @@ class TcpSocket: NSObject, NSStreamDelegate {
         
         self.session = nil
         self.isopen = false
+        
+        self.session = nil
+        self.isopen = false
     }
     
     func connect(host: String, port: Int) {
+        self.host = host
+        self.port = port
+        
         NSStream.getStreamsToHostWithName(host, port: port, inputStream: &(self.input), outputStream: &(self.output))
         
         self.input!.delegate  = self
@@ -46,6 +56,25 @@ class TcpSocket: NSObject, NSStreamDelegate {
         self.output!.open()
     }
     
+    func reconnectIfNeeded() {
+        if (isReconnecting == true) {
+            return
+        }
+        
+        if (self.isopen == false) {
+            self.connect(self.host, port: self.port)
+        }
+        
+        self.isReconnecting = true
+    }
+    
+    func tryReconnect() {
+        if (self.isopen == false) {
+            self.isReconnecting = false
+            reconnectIfNeeded()
+        }
+    }
+    
     func close() {
         self.input?.close()
         self.output?.close()
@@ -54,6 +83,10 @@ class TcpSocket: NSObject, NSStreamDelegate {
         if (session != nil) {
             session?.socketClosed()
         }
+        
+        self.isReconnecting = false
+    
+        NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: Selector("tryReconnect"), userInfo: nil, repeats: false)
     }
     
     func send(packet: PulsePacket) {
@@ -70,6 +103,8 @@ class TcpSocket: NSObject, NSStreamDelegate {
                 println("Error. TcpSocket: (\(aStream.streamError!.code)) \(aStream.streamError!.localizedDescription).")
                 close()
             case NSStreamEvent.HasSpaceAvailable:
+                self.isReconnecting = false
+                
                 if (isopen == true) {
                     break
                 }
