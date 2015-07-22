@@ -44,13 +44,12 @@ class MainViewController: NSViewController, NSTableViewDataSource, NSTableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.isTabPending = true
-        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateTable:", name:"reloadVotes", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateVote:", name:"voteUpdated", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("handleLoadNotification:"), name: "NOTIFICATION_SHOW_VIEW", object: nil)
 
         setupView()
+        setupTabs()
     }
     
     override var representedObject: AnyObject? {
@@ -74,6 +73,16 @@ class MainViewController: NSViewController, NSTableViewDataSource, NSTableViewDe
 //        pulseEffect = PulseAnimation(radius: animationView.frame.size.height, position: center)
         
         setButtonColor(self.pendingTab, color: BLUE_COLOR)
+    }
+    
+    func setupTabs() {
+        setButtonColor(self.pendingTab, color: BLUE_COLOR)
+        self.isTabPending = true
+        if (tableArray().count == 0) {
+            self.isTabPending = false
+            setButtonColor(self.pendingTab, color: NSColor.blackColor())
+            setButtonColor(self.votedTab, color: BLUE_COLOR)
+        }
     }
     
     func showPulseAnimation(color : NSColor) {
@@ -134,6 +143,8 @@ class MainViewController: NSViewController, NSTableViewDataSource, NSTableViewDe
     
     func showVote(vote: VoteModel) {
       
+        println("showVote g:\(vote.greenVotes); y: \(vote.redVotes); r:\(vote.yellowVotes).")
+        
         self.vote = vote
         self.authorName.stringValue = vote.owner!
         self.questionField.string = vote.name

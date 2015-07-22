@@ -66,7 +66,6 @@ class ColorChart: NSView {
             greenLabel?.drawsBackground = false
             greenLabel?.selectable = false
             greenLabel?.alignment = NSTextAlignment.CenterTextAlignment
-//            greenLabel?.minimumScaleFactor = 0.5
             greenLabel?.textColor = NSColor.whiteColor()
             self.addSubview(greenLabel!)
         }
@@ -81,8 +80,6 @@ class ColorChart: NSView {
             yellowLabel?.drawsBackground = false
             yellowLabel?.selectable = false
             yellowLabel?.alignment = NSTextAlignment.CenterTextAlignment
-//            yellowLabel?.minimumScaleFactor = 0.5
-//            yellowLabel?.textAlignment = NSTextAlignment.Center
             yellowLabel?.textColor = NSColor.whiteColor()
             self.addSubview(yellowLabel!)
         }
@@ -97,8 +94,6 @@ class ColorChart: NSView {
             redLabel?.drawsBackground = false
             redLabel?.selectable = false
             redLabel?.alignment = NSTextAlignment.CenterTextAlignment
-//            redLabel?.minimumScaleFactor = 0.5
-//            redLabel?.textAlignment = NSTextAlignment.Center
             redLabel?.textColor = NSColor.whiteColor()
             self.addSubview(redLabel!)
         }
@@ -187,6 +182,7 @@ class ColorChart: NSView {
             
             label.frame = lastSegmentRect
             label.val = NSString(format: "%.0f", colorObject!.val) as String
+            label.needsDisplay = true
         }
     }
     
