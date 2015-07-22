@@ -8,7 +8,7 @@
 
 import Cocoa
 
-let host = "78.137.59.46"
+let host = "192.168.4.40"
 let port = 4242
 
 var mainWindow : NSWindowController?
@@ -17,10 +17,6 @@ var mainWindow : NSWindowController?
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-//        OAuthLoader.sharedInstance.authorize() { didFail, error in
-//        }
-            //self.didAuthorize(didFail, error: error)
-
         NSAppleEventManager.sharedAppleEventManager().setEventHandler(
             self,
             andSelector: "handleURLEvent:withReply:",
@@ -79,7 +75,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             
             // need auth check?
             VoteModel.voteFor(id: voteId, color: color, completion: { (vote) -> Void in
-                NSNotificationCenter.defaultCenter().postNotificationName("NOTIFICATION_SHOW_VIEW", object: nil, userInfo: ["vote":vote!])
+                NSNotificationCenter.defaultCenter().postNotificationName("NOTIFICATION_SHOW_VIEW", object: nil, userInfo: ["voteId":voteId])
             })
             
         default: break

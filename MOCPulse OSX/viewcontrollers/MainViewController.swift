@@ -20,15 +20,10 @@ class MainViewController: NSViewController, NSTableViewDataSource, NSTableViewDe
     
     @IBOutlet weak var authorName: NSTextField!
     @IBOutlet var questionField: NSTextView!
-    @IBOutlet weak var chartView: ChartView!
     
     @IBOutlet weak var redButton: NSButtonCell!
     @IBOutlet weak var greenButton: NSButtonCell!
     @IBOutlet weak var yellowButton: NSButtonCell!
-    
-    @IBOutlet weak var redCounter: NSTextField!
-    @IBOutlet weak var yellowCounter: NSTextField!
-    @IBOutlet weak var greenCounter: NSTextField!
     
     @IBOutlet weak var buttonsHolder: NSView!
     
@@ -39,6 +34,8 @@ class MainViewController: NSViewController, NSTableViewDataSource, NSTableViewDe
     @IBOutlet weak var votedTab: NSButton!
     var vote : VoteModel?
     @IBOutlet weak var pendingTab: NSButton!
+    
+    @IBOutlet weak var colorChart: ColorChart!
     
     var pulseEffect : PulseAnimation!
     
@@ -51,6 +48,7 @@ class MainViewController: NSViewController, NSTableViewDataSource, NSTableViewDe
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateTable:", name:"reloadVotes", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateVote:", name:"voteUpdated", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("handleLoadNotification:"), name: "NOTIFICATION_SHOW_VIEW", object: nil)
 
         setupView()
     }
@@ -70,25 +68,25 @@ class MainViewController: NSViewController, NSTableViewDataSource, NSTableViewDe
         self.topLeftBar.layer?.borderWidth = 1
         self.topLeftBar.layer?.borderColor = NSColor(calibratedRed: 200/255, green: 200/255, blue: 200/255, alpha: 1).CGColor
         
-        var center = CGPointMake((animationView.bounds.origin.x + (animationView.bounds.size.width / 2)), (animationView.bounds.size.height / 2))
-        
-        var screenRect : CGRect = NSScreen.mainScreen()!.frame
-        pulseEffect = PulseAnimation(radius: animationView.frame.size.height, position: center)
+//        var center = CGPointMake((animationView.bounds.origin.x + (animationView.bounds.size.width / 2)), (animationView.bounds.size.height / 2))
+//        
+//        var screenRect : CGRect = NSScreen.mainScreen()!.frame
+//        pulseEffect = PulseAnimation(radius: animationView.frame.size.height, position: center)
         
         setButtonColor(self.pendingTab, color: BLUE_COLOR)
     }
     
     func showPulseAnimation(color : NSColor) {
-        if (pulseEffect.superlayer == nil) {
-            animationView.layer!.insertSublayer(pulseEffect, below: animationView.layer!)
-        }
-        
-        var center = CGPointMake((animationView.bounds.origin.x + (animationView.bounds.size.width / 2)), (animationView.bounds.size.height / 2))
-        pulseEffect.position = center
-        pulseEffect.radius = animationView.frame.size.height
-        
-        pulseEffect.backgroundColor = color.CGColor
-        pulseEffect.addAnimation(pulseEffect.animationGroup, forKey: "pulse")
+//        if (pulseEffect.superlayer == nil) {
+//            animationView.layer!.insertSublayer(pulseEffect, below: animationView.layer!)
+//        }
+//        
+//        var center = CGPointMake((animationView.bounds.origin.x + (animationView.bounds.size.width / 2)), (animationView.bounds.size.height / 2))
+//        pulseEffect.position = center
+//        pulseEffect.radius = animationView.frame.size.height
+//        
+//        pulseEffect.backgroundColor = color.CGColor
+//        pulseEffect.addAnimation(pulseEffect.animationGroup, forKey: "pulse")
     }
     
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
@@ -135,45 +133,22 @@ class MainViewController: NSViewController, NSTableViewDataSource, NSTableViewDe
     }
     
     func showVote(vote: VoteModel) {
+      
         self.vote = vote
         self.authorName.stringValue = vote.owner!
         self.questionField.string = vote.name
+      
+        var greenColor : ColorChartObject = colorChart.getGreenColor()
+        greenColor.val = CGFloat(vote.greenVotes!)
+        var yellowColor : ColorChartObject = colorChart.getYellowColor()
+        yellowColor.val = CGFloat(vote.yellowVotes!)
+        var redColor : ColorChartObject = colorChart.getRedColor()
+        redColor.val = CGFloat(vote.redVotes!)
         
-        self.greenCounter.stringValue = NSString(format: "G: %d", vote.greenVotes) as String
-        self.redCounter.stringValue = NSString(format: "R: %d", vote.redVotes) as String
-        self.yellowCounter.stringValue = NSString(format: "Y: %d", vote.yellowVotes) as String
-        
-        var vArr : [CGFloat] = [CGFloat]()
-        var cArr : [NSColor] = [NSColor]()
-        
-        if (vote.redVotes > 0) {
-            vArr += [CGFloat(vote.redVotes)]
-            cArr += [RED_COLOR]
-        }
-        
-        if (vote.yellowVotes > 0) {
-            vArr += [CGFloat(vote.yellowVotes)]
-            cArr += [YELLOW_COLOR]
-        }
-        
-        if (vote.greenVotes > 0) {
-            vArr += [CGFloat(vote.greenVotes)]
-            cArr += [GREEN_COLOR]
-        }
-        
-        if (vArr.count <= 0) {
-            vArr = [CGFloat(1), CGFloat(1), CGFloat(1)]
-            cArr = [RED_COLOR, YELLOW_COLOR, GREEN_COLOR]
-        }
-        
-        chartView.valuesArray = vArr
-        chartView.colorsArray = cArr
-        
-        chartView.radius = 50
-        chartView.update()
+        colorChart.reloadChart()
         
         self.buttonsHolder.hidden = vote.voted == true
-
+        self.colorChart.hidden = vote.voted == false
     }
     
     @IBAction func redButtonPressed(sender: AnyObject) {
@@ -253,4 +228,18 @@ class MainViewController: NSViewController, NSTableViewDataSource, NSTableViewDe
         self.tableView.reloadData()
     }
     
+    func handleLoadNotification(notification: NSNotification) {
+        var vote = (notification.userInfo as! [NSString:VoteModel])["vote"]
+        if vote != nil {
+            self.showVote(vote!)
+        } else {
+            var voteId = (notification.userInfo as! [NSString:NSString])["voteId"]
+            if voteId != nil {
+                var newVote = LocalObjectsManager.sharedInstance.getVoteById(voteId! as String)
+                if (newVote != nil) {
+                    self.showVote(newVote!)
+                }
+            }
+        }
+    }
 }

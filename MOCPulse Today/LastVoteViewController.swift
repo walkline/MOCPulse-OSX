@@ -40,7 +40,7 @@ class LastVoteViewController: NSViewController, NCWidgetProviding  {
     func setupView() {
         redButton.color = NSColor.redColor()
         yellowButton.color = NSColor.yellowColor()
-        grennButton.color = _GREEN_COLOR
+        grennButton.color = NSColor.greenColor()
     }
 
     func loadVote(vote: VoteModel) {
