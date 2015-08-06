@@ -36,6 +36,7 @@ class OAuthLoader {
     func authorize(callback: (wasFailure: Bool, error: NSError?) -> Void) {
         oauth2.onAuthorize = { parameters in
             println("Did authorize with parameters: \(parameters)")
+            kHardCodedToken = parameters["access_token"] as! String
             TcpSocket.sharedInstance.connect(host, port: port)
 
         }

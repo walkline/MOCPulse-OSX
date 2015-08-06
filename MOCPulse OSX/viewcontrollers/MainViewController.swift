@@ -113,7 +113,7 @@ class MainViewController: NSViewController, NSTableViewDataSource, NSTableViewDe
         var vote: VoteModel = tableArray()[row] as! VoteModel
         
         cell.voteName.stringValue = vote.name!
-        cell.authorField.stringValue = vote.owner!
+        cell.authorField.stringValue = vote.displayOwnerName()
         
         return cell
     }
@@ -146,7 +146,7 @@ class MainViewController: NSViewController, NSTableViewDataSource, NSTableViewDe
         println("showVote g:\(vote.greenVotes); y: \(vote.redVotes); r:\(vote.yellowVotes).")
         
         self.vote = vote
-        self.authorName.stringValue = vote.owner!
+        self.authorName.stringValue = vote.displayOwnerName()
         self.questionField.string = vote.name
       
         var greenColor : ColorChartObject = colorChart.getGreenColor()

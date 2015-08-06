@@ -8,7 +8,7 @@
 
 import Cocoa
 
-let host = "192.168.4.40"
+let host = "pulse.masterofcode.com"
 let port = 4242
 
 var mainWindow : NSWindowController?
