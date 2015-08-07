@@ -19,6 +19,7 @@ class TcpSocket: NSObject, NSStreamDelegate {
     var session : PulseSession?
     var isopen : Bool!
     var isReconnecting : Bool!
+    var waitingForContent : Bool!
     
     private var input : NSInputStream?
     private var output: NSOutputStream?
@@ -38,6 +39,7 @@ class TcpSocket: NSObject, NSStreamDelegate {
         
         self.session = nil
         self.isopen = false
+        self.waitingForContent = false;
     }
     
     func connect(host: String, port: Int) {
@@ -135,6 +137,10 @@ class TcpSocket: NSObject, NSStreamDelegate {
         let headerSize = 6
         var bytesLeft = headerSize - headerReadIndex
         
+        if (bytesLeft == 0 || waitingForContent == true) {
+            return true
+        }
+        
         let buf = NSMutableData(capacity: bytesLeft)
         var buffer = UnsafeMutablePointer<UInt8>(buf!.bytes)
         let length = self.input!.read(buffer, maxLength: bytesLeft)
@@ -148,6 +154,8 @@ class TcpSocket: NSObject, NSStreamDelegate {
             
             headerReadIndex = 0
             headerData = []
+            
+            waitingForContent = true
             
             return true
         }
@@ -175,12 +183,17 @@ class TcpSocket: NSObject, NSStreamDelegate {
         contentData! += data
         contentReadIndex! += length
         
+        var testData = NSData(bytes: data, length: length)
+        
         if contentReadIndex == contentSize {
-            var jsonData = NSData(bytes: data, length: contentSize)
-            packet?.content = JSON(data: jsonData)
+            var jsonData = NSData(bytes: contentData, length: contentSize)
+            var json = JSON(data: jsonData)
+            packet?.content = json
             
             contentReadIndex = 0
             contentData = []
+            
+            waitingForContent = false
             
             return packet
         }
