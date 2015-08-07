@@ -11,21 +11,23 @@ import Alamofire
 import SwiftyJSON
 
 class UserModel : NSObject {
-    var userID: String?
-    var token : String?
-    var email : String?
-    var name : String?
+    var userID   : String?
+    var token    : String?
+    var email    : String?
+    var name     : String?
+    var apiToken : String?
     
     init(token _token: String) {
         super.init()
         self.token = _token
     }
     
-    init(email _email: String, name _name: String, userID _userID: String) {
+    init(email _email: String, name _name: String, userID _userID: String, apiToken _apiToken: String) {
         super.init()
         self.email = _email
         self.name = _name
         self.userID = _userID
+        self.apiToken = _apiToken
     }
     
     // MARK: API Call
@@ -38,8 +40,9 @@ class UserModel : NSObject {
                 var email : String = object["email"].stringValue
                 var name : String = object["name"].stringValue
                 var userID : String = object["uid"].stringValue
+                var apiToken : String = object["app_data"]["vote_api_token"].stringValue
                 
-                var user: UserModel = UserModel(email: email, name: name, userID: userID)
+                var user: UserModel = UserModel(email: email, name: name, userID: userID, apiToken: apiToken)
                 
                 _completion(user);
             },
@@ -49,14 +52,17 @@ class UserModel : NSObject {
     }
     
     static func updatePushToken(_userToken userToken: String,_deviceToken deviceToken: String, _completion: (Void) -> Void) -> Request {
-        return API.response(API.request(.POST, path: "\(kAuthorizationServer)/api/me/data", parameters: ["app_data" : deviceToken], headers: ["Authorization" : "Bearer \(userToken)"]), success: { (responseObject) -> Void in
-            println(responseObject)
-            _completion()
+        return API.response(API.request(.POST, path: "\(kAuthorizationServer)api/me/data",
+            parameters: ["app_data" : ["push_token" : deviceToken]],
+            headers: ["Authorization" : "Bearer \(userToken)"]),
+            success: { (responseObject) -> Void in
+                
+                //            println(responseObject)
+                _completion()
             }, failure: { (error) -> Void in
                 var error2: NSError? = error
                 println(error2?.localizedDescription)
                 _completion()
         })
     }
-    
 }

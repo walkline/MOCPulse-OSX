@@ -36,12 +36,37 @@ class OAuthLoader {
     func authorize(callback: (wasFailure: Bool, error: NSError?) -> Void) {
         oauth2.onAuthorize = { parameters in
             println("Did authorize with parameters: \(parameters)")
-            kHardCodedToken = parameters["access_token"] as! String
-            TcpSocket.sharedInstance.connect(host, port: port)
+//            OAuthLoader.getUser(_userToken: parameters["access_token"] as! String)
+            OAuthLoader.putPushToken(_pushToken: "unk", _userToken: parameters["access_token"] as! String)
+//            kHardCodedToken =
+            
 
         }
         oauth2.afterAuthorizeOrFailure = callback
         oauth2.authorize()
+    }
+    
+    static func putPushToken(_pushToken pushToken : String, _userToken userToken : String) {
+        NSUserDefaults.standardUserDefaults().removeObjectForKey("user_tmp_token")
+        NSUserDefaults.standardUserDefaults().synchronize()
+        UserModel.updatePushToken(_userToken: userToken, _deviceToken: pushToken, _completion: { () -> Void in
+            self.getUser(_userToken: userToken)
+        })
+    }
+    
+    static func getUser(_userToken userToken : String) {
+        UserModel.user(userToken, _completion: { (user:UserModel?) -> Void in
+            var manager : LocalObjectsManager = LocalObjectsManager.sharedInstance
+            manager.user = user
+            
+            kHardCodedToken = user!.apiToken!
+            TcpSocket.sharedInstance.connect(host, port: port)
+            API.isRunAuthorization = false
+            
+            //            println(user)
+            
+            NSNotificationCenter.defaultCenter().postNotificationName("GET_ALL_VOTES", object: nil)
+        })
     }
     
     /** Perform a request against the GitHub API and return decoded JSON or an NSError. */
