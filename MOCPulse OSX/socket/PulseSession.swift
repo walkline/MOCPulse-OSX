@@ -90,7 +90,10 @@ class PulseSession: NSObject {
             if id.isEmpty != true {
                 self.isAuth = true
                 
-                self.userId = id
+                var firstname = packet.content["first_name"].string!
+                var lastname = packet.content["last_name"].string!
+                
+                self.userId = "\(firstname) \(lastname)"
                 
                 for window in NSApplication.sharedApplication().windows {
                     if var w = window as? NSWindow {
